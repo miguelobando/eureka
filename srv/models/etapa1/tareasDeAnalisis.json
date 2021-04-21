@@ -1,0 +1,20 @@
+{
+    "conditions":{
+        "all":[
+            {
+                "fact": "tareasDeAnalisis",
+                "operator": "equal",
+                "value": "No"
+            }
+        ]
+
+    },
+    "event":{
+        "type":"recomendación",
+        "params":{
+            "recomendaciones": [
+                "Realizar la tarea"
+            ]
+        }
+    }
+}

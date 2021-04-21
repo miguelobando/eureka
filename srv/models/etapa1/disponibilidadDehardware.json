@@ -1,0 +1,21 @@
+{
+    "conditions":{
+        "all":[
+            {
+                "fact": "disponibilidadDehardware",
+                "operator": "equal",
+                "value": "No"
+            }
+        ]
+
+    },
+    "event":{
+        "type":"recomendación",
+        "params":{
+            "recomendaciones": [
+                "Identifica la disponibilidad del hardware para el proyecto de analisis de datos",
+                "Identifica si hace conflicto en hardware en producción con el hardware para el analisis de datos"
+            ]
+        }
+    }
+}

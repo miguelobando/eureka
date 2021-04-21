@@ -1,0 +1,120 @@
+{
+        "organizacion_negocio": {
+                "pregunta": "¿Se tiene definido el organigrama del negocio junto a sus roles?",
+                "urlYRegla": "organizacion_negocio",
+                "siguientePaso": "personasClave"
+
+        },
+        "personasClave":{
+                "pregunta": "¿Se tiene definido las personas claves dentro de la organización?",
+                "urlYRegla": "personasClave",
+                "siguientePaso": "experto_de_datos"
+
+                
+        },
+        "experto_de_datos": {
+                "pregunta": "¿Se tiene definido quien es el o los expertos de los datos a analizar?",
+                "urlYRegla": "experto_de_datos",
+                "siguientePaso": "problemaYAreaRelacionada"
+
+        },
+        "problemaYAreaRelacionada": {
+                "pregunta": "¿Se tiene definido el problema en terminos generales así como las areas involucradas en el mismo?",
+                "urlYRegla": "problemaYAreaRelacionada",
+                "siguientePaso": "analisisAnteriores"
+        },
+        "analisisAnteriores": {
+                "pregunta": "¿Tiene una noción de los esfuerzos anteriores hechos analisis de datos?",
+                "urlYRegla": "analisisAnteriores",
+                "siguientePaso": "publicoYExpectativas"
+        },
+        "publicoYExpectativas": {
+                "pregunta": "¿Tiene idenficadas las necesidades y expectativas así como el publico al que va dirigido este analisis de datos?",
+                "urlYRegla": "publicoYExpectativas",
+                "siguientePaso": "solucionTemporal"
+        },
+        "solucionTemporal":{
+                "pregunta":"¿Tiene idenficada la solución que tiene el negocio por ahora y  que busca resolver a traves de la minería de datos?",
+                "urlYRegla": "solucionTemporal",
+                "siguientePaso": "solucionATravesDeMineria"
+        },
+        "solucionATravesDeMineria": {
+                "pregunta": "¿Tiene definido el problema que busca resolver mediante el analisis de datos?",
+                "urlYRegla": "solucionATravesDeMineria",
+                "siguientePaso": "beneficioDeNegocio"
+        },
+        "beneficioDeNegocio": {
+                "pregunta": "¿Tiene definidos los beneficios (a nivel de negocio) esperados de este análisis de datos?",
+                "urlYRegla": "beneficioDeNegocio",
+                "siguientePaso": "criteriosDeExito"
+        },
+        "criteriosDeExito": {
+                "pregunta": "¿Tiene definodos los criterios de éxito del analisis de datos en términos del negocio y quien valida los mismos?",
+                "urlYRegla": "criteriosDeExito",
+                "siguientePaso": "validacionDeCriteriosDeExito"
+        },
+        "validacionDeCriteriosDeExito":{
+                "pregunta":"¿Tiene definido quien valida el criterio de éxito del analisis de datos en términos de negocio?",
+                "urlYRegla":"validacionDeCriteriosDeExito",
+                "siguientePaso":"disponibilidadDehardware"
+        },
+        "hardwareDeNegocio":{
+                "pregunta":"¿Tiene definido el hardware que utiliza el negocio para almacenar sus datos?",
+                "urlYRegla": "hardwareDeNegocio",
+                "siguientePaso":"disponibilidadDehardware"
+        },
+        "disponibilidadDehardware": {
+                "pregunta": "¿Tiene definida la disponibilidad del mismo para el proyecto de analisis de datos?",
+                "urlYRegla": "disponibilidadDehardware",
+                "siguientePaso": "fuentesDeDatos"
+        },
+        "fuentesDeDatos": {
+                "pregunta": "¿Tiene definidas las fuentes de datos con las que se va a trabajar?",
+                "urlYRegla": "fuentesDeDatos",
+                "siguientePaso": "conocimientoRelevanteSobreDatos"
+        },
+        "conocimientoRelevanteSobreDatos": {
+                "pregunta": "¿Tiene claro el conocimiento relevante sobre estos datos?",
+                "urlYRegla": "conocimientoRelevanteSobreDatos",
+                "siguientePaso": "supuestosDeOrganizacionYDatos"
+        },
+        "supuestosDeOrganizacionYDatos": {
+                "pregunta": "¿Tiene listados los supuestos y asunciones que se tienen dentro de la organización, los supuestos externos, la calidad de los datos y como es necesario entender los resultados del proceso de analisis de datos y el publico al que va digirido?",
+                "urlYRegla": "supuestosDeOrganizacionYDatos",
+                "siguientePaso": "terminosRelevantes"
+        },
+        "terminosRelevantes": {
+                "pregunta": "¿Tiene un glorario de términos  relevantes para el proyecto de analisis de datos y de la organización?",
+                "urlYRegla": "terminosRelevantes",
+                "siguientePaso": "tareasDeAnalisis"
+        },
+        "tareasDeAnalisis": {
+                "pregunta": "¿Ha traducido los objetivos en tareas de analisis de datos? Ejemplo: Segmentar los clientes en diversos grupos",
+                "urlYRegla": "tareasDeAnalisis",
+                "siguientePaso": "clusteringDatos"
+        },
+        "clusteringDatos": {
+                "pregunta": "¿La tarea de analisis de datos involucra segmentación de los datos en subgrupos? Por ejemplo: Separar los clientes en grupos de acuerdo a sus compras",
+                "urlYRegla": "clusteringDatos/final",
+                "finEtapa": true,
+                "siguientePaso": "asociacionDatos"
+        },
+        "asociacionDatos": {
+                "pregunta": "La tarea de analisis de datos datos involucra encontrar dependencias entre los datos? Por ejemplo: Encontrar que se compra de manera mas frecuente despues de comprar un paquete de pan",
+                "urlYRegla": "asociacionDatos/final",
+                "finEtapa": true,
+                "siguientePaso": "predicionDatos"
+        },
+        "predicionDatos": {
+                "pregunta": "La tarea de sus datos involucra encontrar dependencias entre los datos? Por ejemplo: Encontrar que se compra de manera mas frecuente despues de comprar un paquete de pan",
+                "urlYRegla": "asociacionDatos/final",
+                "finEtapa": true,
+                "siguientePaso": "predicionDatos"
+        },
+        "deteccionAnomaliasDatos": {
+                "pregunta": "La tarea de analisis de datos involucra encontrar dependencias entre los datos? Por ejemplo: Encontrar que se compra de manera mas frecuente despues de comprar un paquete de pan",
+                "urlYRegla": "deteccionAnomaliasDatos/final",
+                "finEtapa": true,
+                "siguientePaso": "deteccionAnomaliasDatos"
+        }
+}

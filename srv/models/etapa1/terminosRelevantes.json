@@ -1,0 +1,20 @@
+{
+    "conditions":{
+        "all":[
+            {
+                "fact": "terminosRelevantes",
+                "operator": "equal",
+                "value": "No"
+            }
+        ]
+
+    },
+    "event":{
+        "type":"recomendación",
+        "params":{
+            "recomendaciones": [
+                "Realice un glorario de términos  relevantes para el proyecto de analisis de datos y de la organización"
+            ]
+        }
+    }
+}

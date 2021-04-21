@@ -1,0 +1,20 @@
+{
+    "conditions":{
+        "all":[
+            {
+                "fact": "supuestosDeOrganizacionYDatos",
+                "operator": "equal",
+                "value": "No"
+            }
+        ]
+
+    },
+    "event":{
+        "type":"recomendación",
+        "params":{
+            "recomendaciones": [
+                "Liste los supuestos y asunciones que se tienen dentro de la organización, los supuestos externos, la calidad de los datos y como es necesario entender los resultados del proceso de analisis de datos y el publico al que va digirido"
+            ]
+        }
+    }
+}

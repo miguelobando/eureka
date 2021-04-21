@@ -1,0 +1,18 @@
+{
+    "conditions":{
+        "all":[
+            {
+                "fact": "integracionDeDatos",
+                "operator": "equal",
+                "value": "No"
+            }
+        ]
+
+    },
+    "event":{
+        "type":"regla",
+        "params":{
+           "regla": "fuentesEnBasesDeDatos"
+        }
+    }
+}

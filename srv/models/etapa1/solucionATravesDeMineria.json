@@ -1,0 +1,21 @@
+{
+    "conditions":{
+        "all":[
+            {
+                "fact": "solucionATravesDeMineria",
+                "operator": "equal",
+                "value": "No"
+            }
+        ]
+
+    },
+    "event":{
+        "type":"recomendación",
+        "params":{
+            "recomendaciones": [
+                "Describe informalmente el problema que debe ser resuelto a traves del analisis de datos",
+                "Especifica todas las preguntas de negocio tan precisas com sea posible"
+            ]
+        }
+    }
+}

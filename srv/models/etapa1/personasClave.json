@@ -1,0 +1,21 @@
+{
+    "conditions":{
+        "all":[
+            {
+                "fact": "personasClave",
+                "operator": "equal",
+                "value": "No"
+            }
+        ]
+
+    },
+    "event":{
+        "type":"recomendación",
+        "params":{
+            "recomendaciones":[
+                "Identificar las personas claves y sus roles "
+            ]
+        }
+    }
+}
+

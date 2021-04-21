@@ -1,0 +1,20 @@
+{
+    "conditions":{
+        "all":[
+            {
+                "fact": "analisisAnteriores",
+                "operator": "equal",
+                "value": "No"
+            }
+        ]
+
+    },
+    "event":{
+        "type":"recomendación",
+        "params":{
+            "recomendaciones": [
+                "Verifica el estado actual del proyecto, verifica si ya hay un area involucrada que está utizando tecnicas de minería de datos o si es necesario explicarle al area involucrada "
+            ]
+        }
+    }
+}

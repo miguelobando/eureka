@@ -1,0 +1,21 @@
+{
+    "conditions":{
+        "all":[
+            {
+                "fact": "criteriosDeExito",
+                "operator": "equal",
+                "value": "No"
+            }
+        ]
+
+    },
+    "event":{
+        "type":"recomendación",
+        "params":{
+            "recomendaciones": [
+                "Especifica los objetivos de éxito del proyecto de analilisis de datos en terminos del negocio",
+                "Identifica quien valida ese criterio"
+            ]
+        }
+    }
+}

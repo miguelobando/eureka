@@ -1,0 +1,21 @@
+{
+    "conditions":{
+        "all":[
+            {
+                "fact": "publicoYExpectativas",
+                "operator": "equal",
+                "value": "No"
+            }
+        ]
+
+    },
+    "event":{
+        "type":"recomendación",
+        "params":{
+            "recomendaciones": [
+                "Identifica las necesidades de los usuarios y expectativas",
+                "Identifica el público objetivo del proceso de analisis de datos"
+            ]
+        }
+    }
+}

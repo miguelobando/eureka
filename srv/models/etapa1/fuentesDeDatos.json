@@ -1,0 +1,21 @@
+{
+    "conditions":{
+        "all":[
+            {
+                "fact": "fuentesDeDatos",
+                "operator": "equal",
+                "value": "No"
+            }
+        ]
+
+    },
+    "event":{
+        "type":"recomendación",
+        "params":{
+            "recomendaciones": [
+                "Identifica las fuentes de datos",
+                "Identifica los tipos de fuentes de datos (expertos, bases de datos, documentación, entre otros)"
+            ]
+        }
+    }
+}

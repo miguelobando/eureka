@@ -1,0 +1,20 @@
+{
+    "conditions":{
+        "all":[
+            {
+                "fact": "validacionDeCriteriosDeExito",
+                "operator": "equal",
+                "value": "No"
+            }
+        ]
+
+    },
+    "event":{
+        "type":"recomendación",
+        "params":{
+            "recomendaciones":[
+                "Identifica quien valida ese criterio"
+            ]
+        }
+    }
+}

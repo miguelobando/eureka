@@ -1,0 +1,130 @@
+{
+    "listaDeDatos":{
+       "Si":"Si",
+        "No":"No",
+        "pregunta":"¿Tiene listados la importancia/relevancia de cada uno de los atributos de los datos?",
+        "urlYRegla": "listaDeDatos",
+        "siguientePaso": "integracionDeDatos"
+        
+    },
+    "integracionDeDatos":{
+        "pregunta":"¿Ya se han integrado todos los datos en una unica tabla atributo-valor?",
+        "Si":"Si",
+        "No":"No",
+        "urlYRegla": "integracionDeDatos",
+        "siguientePaso":"integracionAWekaCSV"
+    },
+    "fuentesEnBasesDeDatos":{
+        "pregunta":"¿Sus fuentes de datos estan almacenados en motores de bases de datos?",
+        "Si":"No",
+        "No":"Si",
+        "recomendaciones":[
+            {
+                "texto":"Realice las consultas correspondientes junto a los joins para obtener como resultado 1 sola tabla donde toda la población a estudiar tenga los atributos correspondientes dentro de su motor de bases de datos",
+                "imagen":""
+            }
+        ],
+        "urlYRegla": "fuentesEnBasesDeDatos",
+        "siguientePaso":"fuentesEnExcel"
+    },
+    "fuentesEnExcel":{
+        "pregunta":"¿La fuente de sus datos estan en archivos de tipo excel?",
+        "Si":"No",
+        "No":"Si",
+        "recomendaciones":[
+            {
+                "texto":"",
+                "imagen":""
+            }
+        ],
+        "urlYRegla": "fuentesEnExcel",
+        "siguientePaso":"fuentesEnFisico"
+    },
+    "fuentesEnFisico":{
+        "pregunta":"¿Sus fuentes de datos estan almacenados en arhivos fisicos",
+        "Si":{
+            "valor":""
+        },
+        "No":{
+            "valor":""
+        },
+        "recomendaciones":[
+            {
+                "texto":"",
+                "imagen":""
+            }
+        ],
+        "urlYRegla": "",
+        "siguientePaso":""
+    },
+    "integracionAWekaCSV":{
+        "pregunta":"El usuario posee fuentes de datos en archivos CSV",
+        "Si":{
+            "valor":""
+        },
+        "No":{
+            "valor":""
+        },
+        "recomendaciones":[
+            {
+                "texto":"",
+                "imagen":""
+            }
+        ],
+        "urlYRegla": "",
+        "siguientePaso":""
+    },
+    "integracionAWekaBD":{
+        "pregunta":"Posee fuentes de datos en un motor de base de datos",
+        "Si":"No",
+        "No":"Si",
+        "recomendaciones":[
+            {
+                "texto":"",
+                "imagen":""
+            }
+        ],
+        "urlYRegla": "",
+        "siguientePaso":""
+    },
+    "verificacionDeValoresVacios":{
+        "pregunta":"¿Ha Verificado si hay valores vacios en los atributos obtenidos?",
+        "Si":"Si",
+        "No":"No",
+        "recomendaciones":[
+            {
+                "texto":"",
+                "imagen":""
+            }
+        ],
+        "urlYRegla": "",
+        "siguientePaso":""
+    },
+    "integrarAtributosNominales":{
+        "pregunta":"¿Se han integrado los atributos nominales de una manera uniforme? Ejemplo: Si se tiene un atributo llamado 'Sexo' los valores que deberían contener deben ser solo 2 'M' y 'F'",
+        "Si":"Si",
+        "No":"No",
+        "recomendaciones":[
+            {
+                "texto":"",
+                "imagen":""
+            }
+        ],
+        "urlYRegla": "",
+        "siguientePaso":""
+    },
+    "taxonomiaDeAtributos":{
+        "pregunta":"¿Se conoce la taxonomia de los atributos cargados a la herramienta?",
+        "Si":"Si",
+        "No":"No",
+        "recomendaciones":[
+            {
+                "texto":"",
+                "imagen":""
+            }
+        ],
+        "urlYRegla": "",
+        "siguientePaso":""
+    }
+    
+}

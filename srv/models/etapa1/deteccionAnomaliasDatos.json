@@ -1,0 +1,20 @@
+{
+    "conditions":{
+        "all":[
+            {
+                "fact": "deteccionAnomaliasDatos",
+                "operator": "equal",
+                "value": "Si"
+            }
+        ]
+
+    },
+    "event":{
+        "type":"recomendación",
+        "params":{
+            "recomendaciones": [
+                "Su analisis de datos involucra tecnicas de clustering y clasificacion"
+            ]
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "conditions":{
+        "all":[
+            {
+                "fact": "solucionTemporal",
+                "operator": "equal",
+                "value": "No"
+            }
+        ]
+
+    },
+    "event":{
+        "type":"recomendación",
+        "params":{
+            "recomendaciones":[
+                "Identifica la solución que se utiliza por ahora del problema",
+                "Describe las ventajas y desventajas de la solución actual y hasta que nivel es aceptada por los usuarios"
+            ]
+        }
+    }
+}

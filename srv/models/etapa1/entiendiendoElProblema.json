@@ -1,0 +1,21 @@
+{
+    "conditions":{
+        "all":[
+            {
+                "fact": "organizacion_negocio",
+                "operator": "equal",
+                "value": "No"
+            }
+        ]
+
+    },
+    "event":{
+        "type":"recomendación",
+        "params":{
+            "recomendaciones": [
+                "Elaborar organigramas que identifiquen las divisiones, los departamentos y los grupos de proyectos. El organigrama también debe identificar los nombres de los gerentes y sus responsabilidades"
+            ]
+        }
+    }
+}
+

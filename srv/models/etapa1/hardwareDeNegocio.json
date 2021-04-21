@@ -1,0 +1,20 @@
+{
+    "conditions":{
+        "all":[
+            {
+                "fact": "hardwareDeNegocio",
+                "operator": "equal",
+                "value": "No"
+            }
+        ]
+
+    },
+    "event":{
+        "type":"recomendación",
+        "params":{
+            "recomendaciones":[
+                "Identifica el hardware que utiliza el negocio"
+            ]
+        }
+    }
+}

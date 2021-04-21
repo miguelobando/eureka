@@ -1,0 +1,20 @@
+{
+    "conditions":{
+        "all":[
+            {
+                "fact": "conocimientoRelevanteSobreDatos",
+                "operator": "equal",
+                "value": "No"
+            }
+        ]
+
+    },
+    "event":{
+        "type":"recomendación",
+        "params":{
+            "recomendaciones": [
+                "Describe el conocimiento relevante de fondo relacionado al problema descrito en los objetivos del negocio "
+            ]
+        }
+    }
+}

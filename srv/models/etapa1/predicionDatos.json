@@ -1,0 +1,20 @@
+{
+    "conditions":{
+        "all":[
+            {
+                "fact": "predicionDatos",
+                "operator": "equal",
+                "value": "Si"
+            }
+        ]
+
+    },
+    "event":{
+        "type":"recomendación",
+        "params":{
+            "recomendaciones": [
+                "Su analisis de datos involucra tecnicas de prediccion como regresiones lineales y arboles de regresion"
+            ]
+        }
+    }
+}

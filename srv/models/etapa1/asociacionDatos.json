@@ -1,0 +1,20 @@
+{
+    "conditions":{
+        "all":[
+            {
+                "fact": "asociacionDatos",
+                "operator": "equal",
+                "value": "Si"
+            }
+        ]
+
+    },
+    "event":{
+        "type":"recomendación",
+        "params":{
+            "recomendaciones": [
+                "Su analisis de datos involucra tecnicas de asociación"
+            ]
+        }
+    }
+}
