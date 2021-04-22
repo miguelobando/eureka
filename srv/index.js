@@ -1,12 +1,10 @@
 import express from 'express';
 const cors = require('cors');
 // import socketIO from "socket.io";
-const { Engine } = require("json-rules-engine");
 
 export default (app) => {
   app.use(express.json());
   app.use(cors());
-  var reglaDisparada;
   // const entiendiendoElProblema = require('./models/etapa1/entiendiendoElProblema.json');
   // const expertoEnLosDatos = require('./models/etapa1/expertoEnLosDatos.json');
   // const problemaYAreaRelacionada = require('./models/etapa1/problemaYAreaRelacionada.json');
@@ -29,16 +27,8 @@ export default (app) => {
   // const solucionTemporal = require('./models/etapa1/solucionTemporal.json');
   // const validacionDeCriteriosDeExito = require('./models/etapa1/validacionDeCriteriosDeExito.json');
   // const hardwareDeNegocio = require('./models/etapa1/hardwareDeNegocio.json');
-  const listaDeDatosSi = require('./models/etapa2/listaDeDatosSi.json');
-  const listaDeDatosNo = require('./models/etapa2/listaDeDatosNo.json');
-  const integracionDeDatosSi = require('./models/etapa2/integracionDeDatosSi.json');
-  const integracionDeDatosNo = require('./models/etapa2/integracionDeDatosNo.json'); 
-  // const integracionAWekaCSVSi = require('./models/etapa2/integracionAWekaCSVSi.json');
-  // const integracionAWekaCSVNo = require('./models/etapa2/integracionAWekaCSVNo.json');
- 
   // var engine = new Engine();
   
-  var engine2 = new Engine();
 
   // engine.addRule(entiendiendoElProblema);
   // engine.addRule(expertoEnLosDatos);
@@ -63,8 +53,7 @@ export default (app) => {
   // engine.addRule(validacionDeCriteriosDeExito);
   // engine.addRule(hardwareDeNegocio);
   
-  engine2.addRule(listaDeDatosSi);
-  engine2.addRule(listaDeDatosNo);
+
   // engine2.addRule(integracionDeDatosSi);
   // engine2.addRule(integracionDeDatosNo);
   // engine2.addRule(integracionAWekaCSVSi);
@@ -98,18 +87,6 @@ export default (app) => {
   //   hardwareDeNegocio: ""
   // };
 
-  var facts2 = {
-    listaDeDatos: "",
-    integracionDeDatos: "",
-    fuentesEnBasesDeDatos: "",
-    fuentesEnExcel: "",
-    fuentesEnFisico: "",
-    integracionAWekaCSV: "",
-    integracionAWekaBD: "",
-    verificacionDeValoresVacios: "",
-    integrarAtributosNominales: "",
-    taxonomiaDeAtributos: ""
-  };
 
 
   //  app.post('/:fact', (req, res) => {
@@ -145,25 +122,6 @@ export default (app) => {
   //     res.send("Siguiente");
   // });
 
-  app.post('/2/:fact', function (req,res) {
-    facts2[req.params.fact] = req.query.ans;
-    engine2.addRule(listaDeDatosSi);
-    engine2.addRule(listaDeDatosNo);
-    engine2.addRule(integracionDeDatosSi);
-    engine2.addRule(integracionDeDatosNo);
-    
-    engine2 
-      .run(facts2)
-      .then(({events}) => {
-        events.map(event => {
-          console.log("Esta es la regla que trajo");
-          console.log(event);
-          reglaDisparada = event;
-          
-        });
-      }); 
-      res.send(reglaDisparada);
-      
-  });
+ 
 
 };
