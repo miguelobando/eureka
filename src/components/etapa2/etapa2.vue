@@ -60,13 +60,15 @@ export default {
       instrucciones: false,
       resultado: false,
       respuesta: Object,
-      siguientePasoPostRecomendacion: false
+      siguientePasoPostRecomendacion: false,
+      siguientePaso: ""
     };
   },
   methods: {
-    enviarRespuesta2: function(args) {
-      let respuesta = this.datos[args];
-      console.log(respuesta);
+    enviarRespuesta2: function(arg) {
+      let respuesta = this.datos[arg];
+      this.mostrarBotonSiguientePaso(arg);
+
       if(respuesta.tipo == "regla"){
         this.instrucciones = false;
         this.$parent.siguientePasoEtapa2 = respuesta.regla;
@@ -78,19 +80,20 @@ export default {
         
       }
     },
-   
+    mostrarBotonSiguientePaso: function(arg){
+        if(this.datos[arg].siguientePaso){
+          this.siguientePasoPostRecomendacion = true;
+          this.siguientePaso = this.datos[arg].siguientePaso; 
+        }
+    },   
     siguientePregunta: function() {
-      this.$parent.siguientePasoEtapa2 = this.respuesta.siguientePaso;
+      this.instrucciones = false;
+      this.siguientePasoPostRecomendacion = false;
+      this.$parent.siguientePasoEtapa2 = this.siguientePaso;
     }
   },
-   watch:{
-      instrucciones: function (val){
-          if((this.datos.Si.siguientePaso || this.datos.No.siguientePaso)  && val == true){
-            this.siguientePasoPostRecomendacion = true;
-          }          
-      }
-    }
-  }
+  
+}
 
 </script>
 

@@ -29,7 +29,6 @@
     
     "integracionDeDatos":{
         "pregunta":"¿Ya se han integrado todos los datos en una unica tabla atributo-valor?", 
-        "urlYRegla": "integracionDeDatos",
         "No":{
            "tipo":"regla",
            "regla":"fuentesEnBasesDeDatos"
@@ -56,8 +55,7 @@
         "No":{
             "tipo":"regla",
             "regla":"fuentesEnExcel"
-        },
-        "urlYRegla": "fuentesEnBasesDeDatos"
+        }
 
     },
     
@@ -162,6 +160,62 @@
         }
     },
     "verificacionDeValoresVacios":{
-        "pregunta": "fin"
+        "pregunta": "¿Ha Verificado si hay valores vacios en los atributos obtenidos?",
+        "Si":{
+            "tipo": "regla",
+            "regla": "integrarAtributosNominales"
+        },
+        "No":{
+            "tipo":"recomendación",
+            "recomendaciones":[
+                {
+                    "texto":"Por cada uno de los datos extraidos revisa la cantidad de valores faltantes en la pestaña 'Preprocess' dentro del recuadro 'Selected atributes'",
+                    "imagen": ""
+                }
+            ],
+            "siguientePaso":"integrarAtributosNominales"
+        }
+       
+    },
+    "integrarAtributosNominales":{
+        "pregunta":"¿Se han integrado los atributos nominales de una manera uniforme? Ejemplo: Si se tiene un atributo llamado 'Sexo' los valores que deberían contener deben ser solo 2 'M' y 'F'",
+        "Si":{
+            "tipo":"regla",
+            "regla":"taxonomiaDeAtributos"
+        },
+        "No":{
+            "tipo":"recomendación",
+            "recomendaciones":[
+                {
+                    "texto":"Seleccionar el atributo que se desea modificar",
+                    "imagen":""
+                },
+                {
+                    "texto":"Clickea 'choose' en la barra 'Filters'",
+                    "imagen":""
+                },
+                {
+                    "texto":"Despliega el directorio weka -> filters -> unsupervised -> attributes",
+                    "imagen":""
+                },
+                {
+                    "texto":"Clickea RenameNominalValues",
+                    "imagen":""
+                },
+                {
+                    "texto":"En el campo 'selectedAtributes' escribe el atributo que deseas modificar",
+                    "imagen":""
+                },
+                {
+                    "texto":"El el campo valueReplacement escribe '<valor que deseas remplazar>:<valor por el que será reemplazado>'",       
+                    "imagen":""
+                },
+                {
+                    "texto":"Haz click en ok y luego en 'Apply'",
+                    "imagen":""
+                }
+            ],
+            "siguientePaso": "taxonomiaDeAtributos"
+        }
     }
 }
