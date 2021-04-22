@@ -1,130 +1,167 @@
 {
     "listaDeDatos":{
-       "Si":"Si",
-        "No":"No",
         "pregunta":"¿Tiene listados la importancia/relevancia de cada uno de los atributos de los datos?",
         "urlYRegla": "listaDeDatos",
-        "siguientePaso": "integracionDeDatos"
+        "Si":{
+            "tipo":"regla",
+             "regla": "integracionDeDatos"
+        },
+        "No":{
+            "tipo":"recomendación",
+            "recomendaciones": [
+                {
+                    "texto": "Realice un plan acerca de que información es necesaria para la realización de las tareas de minería de datos planteadas en la etapa anterior",
+                    "imagen": ""
+                },
+                {
+                    "texto": "Listado de los datos necesarios para realizar el analisis",
+                    "imagen": ""
+                },
+                {
+                    "texto": "Listado de donde se encuentran las tablas que contienen de esos datos almacenados",
+                    "imagen": ""
+                }
+            ],
+            "siguientePaso":"integracionDeDatos"
+        }
         
     },
+    
     "integracionDeDatos":{
-        "pregunta":"¿Ya se han integrado todos los datos en una unica tabla atributo-valor?",
-        "Si":"Si",
-        "No":"No",
+        "pregunta":"¿Ya se han integrado todos los datos en una unica tabla atributo-valor?", 
         "urlYRegla": "integracionDeDatos",
-        "siguientePaso":"integracionAWekaCSV"
+        "No":{
+           "tipo":"regla",
+           "regla":"fuentesEnBasesDeDatos"
+        },
+        "Si":{
+            "tipo":"regla",
+            "regla":"integracionAWekaCSV"
+        }
     },
+    
+
     "fuentesEnBasesDeDatos":{
         "pregunta":"¿Sus fuentes de datos estan almacenados en motores de bases de datos?",
-        "Si":"No",
-        "No":"Si",
-        "recomendaciones":[
-            {
-                "texto":"Realice las consultas correspondientes junto a los joins para obtener como resultado 1 sola tabla donde toda la población a estudiar tenga los atributos correspondientes dentro de su motor de bases de datos",
-                "imagen":""
-            }
-        ],
-        "urlYRegla": "fuentesEnBasesDeDatos",
-        "siguientePaso":"fuentesEnExcel"
-    },
-    "fuentesEnExcel":{
-        "pregunta":"¿La fuente de sus datos estan en archivos de tipo excel?",
-        "Si":"No",
-        "No":"Si",
-        "recomendaciones":[
-            {
-                "texto":"",
-                "imagen":""
-            }
-        ],
-        "urlYRegla": "fuentesEnExcel",
-        "siguientePaso":"fuentesEnFisico"
-    },
-    "fuentesEnFisico":{
-        "pregunta":"¿Sus fuentes de datos estan almacenados en arhivos fisicos",
         "Si":{
-            "valor":""
+            "tipo":"recomendación",
+            "recomendaciones":[
+                {
+                    "texto":"Realice las consultas correspondientes junto a los joins para obtener como resultado 1 sola tabla donde toda la población a estudiar tenga los atributos correspondientes dentro de su motor de bases de datos",
+                    "imagen":""
+                }
+            ],
+            "siguientePaso": "integracionAWekaBD"
         },
         "No":{
-            "valor":""
+            "tipo":"regla",
+            "regla":"fuentesEnExcel"
         },
-        "recomendaciones":[
-            {
-                "texto":"",
-                "imagen":""
-            }
-        ],
-        "urlYRegla": "",
-        "siguientePaso":""
+        "urlYRegla": "fuentesEnBasesDeDatos"
+
     },
+    
     "integracionAWekaCSV":{
-        "pregunta":"El usuario posee fuentes de datos en archivos CSV",
+        "pregunta": "¿El usuario posee sus fuentes de datos en archivos CSV?",
         "Si":{
-            "valor":""
+            "tipo":"recomendación",
+            "recomendaciones":[
+                {
+                    "texto":"Abra weka en el boton explorer",
+                    "imagen":"/assets/img/etapa2/regla3/paso1.PNG"
+                },
+                {
+                    "texto":"Luego vaya la pestaña de preprocess",
+                    "imagen":"/assets/img/etapa2/regla3/paso2.png"     
+                },
+                {
+                    "texto":"Haga click en Open file",
+                    "imagen":"/assets/img/etapa2/regla3/paso2.png"
+                },
+                {
+                    "texto":"Cambie el formato del explorador a CSV",
+                    "imagen":"/assets/img/etapa2/regla3/paso3.png"
+                },
+                {
+                    "texto":"Seleccione su archivo",
+                    "imagen":""
+                }
+            ],
+            "siguientePaso": "verificacionDeValoresVacios"
+            
+        },
+        "No": {
+            "tipo":"regla",
+            "regla":"integracionAWekaBD"
+        }
+    },
+   
+    "integracionAWekaBD":{
+        "pregunta":"¿Posee sus fuentes de datos en un motor de base de datos?",
+        "Si":{
+            "tipo":"recomendación",
+            "recomendaciones":[
+                {
+                    "texto":"Abra weka en el boton explorer",
+                    "imagen":""
+                },
+                {
+                    "texto":"Luego vaya la pestaña de preprocess",
+                    "imagen":""     
+                },
+                {
+                    "texto":"Seleccione OPEN DB",
+                    "imagen":""
+                },
+                {
+                    "texto":"Introduzca los datos necesarios para conectarse a la base de datos incluyendo el query necesario para obtener los datos en una sola tabla atributo-valor",
+                    "imagen":""
+                }
+            ],
+            "siguientePaso": "verificacionDeValoresVacios"
         },
         "No":{
-            "valor":""
-        },
-        "recomendaciones":[
-            {
-                "texto":"",
-                "imagen":""
-            }
-        ],
-        "urlYRegla": "",
-        "siguientePaso":""
+            "tipo": "regla",
+            "regla": "integracionAWekaCSV"
+        }
     },
-    "integracionAWekaBD":{
-        "pregunta":"Posee fuentes de datos en un motor de base de datos",
-        "Si":"No",
-        "No":"Si",
-        "recomendaciones":[
-            {
-                "texto":"",
-                "imagen":""
-            }
-        ],
-        "urlYRegla": "",
-        "siguientePaso":""
+    
+    "fuentesEnExcel":{
+        "pregunta": "¿La fuente de sus datos estan en archivos de tipo excel?",
+        "Si": {
+            "tipo":"recomendación",
+            "recomendaciones":[
+                {
+                    "texto":"En caso de tener archivos excel o de cualquier otro formato, transformelos a archivos CSV uniendo todas las todos los datos relevantes de cada individuo a estudiar en una misma fila",
+                    "imagen": ""
+                }
+            ],
+            "siguientePaso": "integracionAWekaCSV"
+        },
+        "No": {
+            "tipo":"regla",
+            "regla":"fuentesEnFisico"
+        }
+    },
+
+    "fuentesEnFisico":{
+        "pregunta": "¿Sus fuentes de datos estan almacenados en archivos fisicos?",
+        "Si":{
+            "tipo":"recomendación",
+            "recomendaciones":[
+                {
+                    "texto": "En caso de tener archivos fisicos que contengan información relevante, paselos a un archivo en formato CSV en donde por cada objeto de estudio, exista una fila con todos sus atributos reflejados",
+                    "imagen":""
+                }
+            ],
+            "siguientePaso":"integracionAWekaCSV"
+        },
+        "No":{
+            "tipo":"regla",
+            "regla":"integracionAWekaCSV"
+        }
     },
     "verificacionDeValoresVacios":{
-        "pregunta":"¿Ha Verificado si hay valores vacios en los atributos obtenidos?",
-        "Si":"Si",
-        "No":"No",
-        "recomendaciones":[
-            {
-                "texto":"",
-                "imagen":""
-            }
-        ],
-        "urlYRegla": "",
-        "siguientePaso":""
-    },
-    "integrarAtributosNominales":{
-        "pregunta":"¿Se han integrado los atributos nominales de una manera uniforme? Ejemplo: Si se tiene un atributo llamado 'Sexo' los valores que deberían contener deben ser solo 2 'M' y 'F'",
-        "Si":"Si",
-        "No":"No",
-        "recomendaciones":[
-            {
-                "texto":"",
-                "imagen":""
-            }
-        ],
-        "urlYRegla": "",
-        "siguientePaso":""
-    },
-    "taxonomiaDeAtributos":{
-        "pregunta":"¿Se conoce la taxonomia de los atributos cargados a la herramienta?",
-        "Si":"Si",
-        "No":"No",
-        "recomendaciones":[
-            {
-                "texto":"",
-                "imagen":""
-            }
-        ],
-        "urlYRegla": "",
-        "siguientePaso":""
+        "pregunta": "fin"
     }
-    
 }

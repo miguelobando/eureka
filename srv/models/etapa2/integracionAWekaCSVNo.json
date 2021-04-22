@@ -2,7 +2,7 @@
     "conditions":{
         "all":[
             {
-                "fact": "integracionDeDatos",
+                "fact": "integracionAWekaCSV",
                 "operator": "equal",
                 "value": "No"
             }
@@ -12,7 +12,7 @@
     "event":{
         "type":"regla",
         "params":{
-           "regla": "fuentesEnBasesDeDatos"
+                "regla":"integracionAWekaBD"
         }
     }
 }

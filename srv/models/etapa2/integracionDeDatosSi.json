@@ -1,0 +1,19 @@
+{
+    "conditions":{
+        "all":[
+            {
+                "fact": "integracionDeDatos",
+                "operator": "equal",
+                "value": "Si"
+            }
+        ]
+
+    },
+    "event":{
+        "type":"regla",
+        "params":{
+           "regla": "integracionAWekaCSV"
+        }
+    },
+    "name":"integraccionDeDatosSi"
+} 

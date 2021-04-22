@@ -1,0 +1,17 @@
+{
+    "conditions": {
+        "all": [
+            {
+                "fact": "listaDeDatos",
+                "operator": "equal",
+                "value": "Si"
+            }
+        ]
+    },
+    "event": {
+        "type": "regla",
+        "params": {
+           "regla": "integracionDeDatos"
+        }
+    }
+}

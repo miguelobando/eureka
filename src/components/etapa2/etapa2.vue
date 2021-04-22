@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+    <div>
+     <p>Etapa 2</p>
+    </div>
     <div class="row">
       <div class="col s12">
         <div class>
@@ -10,12 +13,12 @@
     <div class="row">
       <button
         class="col offset-s1 s4 waves-effect waves-light btn indigo darken-1"
-        @click="enviarRespuesta(datos.Si)"
+        @click="enviarRespuesta2('Si')"
       >Si</button>
 
       <button
         class="col offset-s2 s4 waves-effect waves-light btn indigo darken-1"
-        @click="enviarRespuesta(datos.No)"
+        @click="enviarRespuesta2('No')"
       >No</button>
     </div>
     <div class="row" v-if="instrucciones">
@@ -24,11 +27,11 @@
           <span class="card-title">En un documento realice lo siguiente:</span>
           <div
             class="card-content"
-            v-for="instrucciones in respuesta.recomendaciones"
-            :key="instrucciones.index"
+            v-for="recomendaciones in respuesta"
+            :key="recomendaciones.index"
           >
-            <p class="left-align">☼ {{instrucciones.texto}}</p>
-            <img v-bind:src="instrucciones.imagen" class="responsive-img" />
+            <p class="left-align">☼ {{recomendaciones.texto}}</p>
+            <img v-bind:src="recomendaciones.imagen" class="responsive-img" />
           </div>
         </div>
       </div>
@@ -61,43 +64,34 @@ export default {
     };
   },
   methods: {
-    enviarRespuesta: function(args) {
-      this.axios
-        .post("http://localhost:3000/" + this.datos.urlYRegla + "?ans=" + args)
-        .then(response => {
-          this.respuesta = response.data.params;
-         console.log("respuesta");
-        console.log(response.data); 
-          console.log("fin de respuesta");
-          if (response.data.type == "recomendación") {
-            this.instrucciones = true;
-          } else if (response.data.type == "regla") {
-            this.$parent.siguientePasoEtapa2 = response.data.params.regla;
-          } else if (response.data == "finEtapa") {
-            // this.$parent.etapa["etapa2"] = true;
-            // this.$parent.etapa["etapa1"] = false;
-          } else {
-            this.instrucciones = false;
-            this.$parent.siguientePasoEtapa2 = this.datos.siguientePaso;
-          }
-        })
-        .catch(() => {
-          console.log("No existe la ruta");
-        });
+    enviarRespuesta2: function(args) {
+      let respuesta = this.datos[args];
+      console.log(respuesta);
+      if(respuesta.tipo == "regla"){
+        this.instrucciones = false;
+        this.$parent.siguientePasoEtapa2 = respuesta.regla;
+      } 
+      if(respuesta.tipo == "recomendación"){
+        this.respuesta = respuesta.recomendaciones;
+        this.instrucciones = true;
+        
+        
+      }
     },
    
     siguientePregunta: function() {
-      this.$parent.siguientePasoEtapa2 = this.respuesta.siguienteRegla;
+      this.$parent.siguientePasoEtapa2 = this.respuesta.siguientePaso;
     }
   },
    watch:{
-      'respuesta.siguientePaso': function (val){
-          if(val.siguientePaso){
+      instrucciones: function (val){
+          if((this.datos.Si.siguientePaso || this.datos.No.siguientePaso)  && val == true){
             this.siguientePasoPostRecomendacion = true;
-        }
+          }          
       }
     }
-};
+  }
+
 </script>
 
 <style>
