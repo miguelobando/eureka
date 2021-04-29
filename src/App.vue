@@ -7,6 +7,7 @@
     <div v-if="etapa['etapa2']">
       <etapa2 v-bind:datos="datosEtapa2" /> 
     </div>
+    
    </div>
 </template>
 
@@ -15,6 +16,7 @@ import ImportacionDeEtapa1 from "./components/etapa1/datosEtapa1.json";
 import ImportacionDeEtapa2 from "./components/etapa2/datosEtapa2.json";
 import etapa1 from './components/etapa1/etapa1.vue';
 import etapa2 from './components/etapa2/etapa2.vue';
+// import etapa3 from './components/etapa3/etapa3.vue';
 import 'materialize-css/dist/css/materialize.css';
 import 'materialize-css/dist/js/materialize.js';
 
@@ -23,7 +25,7 @@ export default {
   name: 'App',
   components: {
     etapa1,
-    etapa2 
+    etapa2
   },
   data(){
     return{
@@ -35,11 +37,12 @@ export default {
       siguientePasoEtapa2: "",
       finEtapa: false,
       etapa:{
-        etapa1: false,
-        etapa2:true
+        etapa1: true,
+        etapa2: false,
+        etapa3: false
       }
     }
-  },
+   },
 
   created(){
     this.datosEtapa1 = ImportacionDeEtapa1['organizacion_negocio'];
@@ -51,7 +54,7 @@ export default {
     },
     siguientePasoEtapa2: function(val){
       this.datosEtapa2 = ImportacionDeEtapa2[val];
-    }
+    } 
   }
 
 }
