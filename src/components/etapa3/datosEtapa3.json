@@ -1,84 +1,302 @@
 {
-    "kmedias":{
-        "reduccionDimensionalidad":{
-            "pregunta":"¿Conoce si todos los atributos de las tablas son relevantes para el proceso de agrupacion?",
-            "urlYregla":"reduccionDimensionalidad",
-            "Si":{
+    "kmedias": {
+        "reduccionDimensionalidad": {
+            "pregunta": "¿Conoce si todos los atributos de las tablas son relevantes para el proceso de agrupacion?",
+            "urlYregla": "reduccionDimensionalidad",
+            "Si": {
                 "tipo": "regla",
-                "regla":"reduccionDimensionalidad"
+                "regla": "reduccionDimensionalidad"
             },
-            "No":{
-                "tipo":"recomendación",
-                "recomendaciones":[
+            "No": {
+                "tipo": "recomendación",
+                "recomendaciones": [
                     {
-                        "texto":"Ve hacia la pestaña select attributes",
-                        "imagen":""
+                        "texto": "Ve hacia la pestaña select attributes",
+                        "imagen": ""
                     },
                     {
-                        "texto":"Clickear el boton Choose  debo del titulo 'Attribute evaluator'",
-                        "imagen":""
+                        "texto": "Clickear el boton Choose  debo del titulo 'Attribute evaluator'",
+                        "imagen": ""
                     },
                     {
-                        "texto":"Seleccionar 'WrapperSubsetEval'",
-                        "imagen":""
+                        "texto": "Seleccionar 'WrapperSubsetEval'",
+                        "imagen": ""
                     },
                     {
-                        "texto":"Abrir las opciones de 'WrapperSubsetEval'",
-                        "imagen":""
+                        "texto": "Abrir las opciones de 'WrapperSubsetEval'",
+                        "imagen": ""
                     },
                     {
-                        "texto":"En la opcion de classifier clickear  el boton Choose",
-                        "imagen":""
+                        "texto": "En la opcion de classifier clickear  el boton Choose",
+                        "imagen": ""
                     },
                     {
-                        "texto":"Elegir dentro del directorio trees la opción J48",
-                        "imagen":""
+                        "texto": "Elegir dentro del directorio trees la opción J48",
+                        "imagen": ""
                     },
                     {
-                        "texto":"Si desea seleccionar atributos que afecten a un atributo en concreto seleccione la clase",
-                        "imagen":""
+                        "texto": "Si desea seleccionar atributos que afecten a un atributo en concreto seleccione la clase",
+                        "imagen": ""
                     },
                     {
-                        "texto":"Presiona start",
-                        "imagen":""
+                        "texto": "Presiona start",
+                        "imagen": ""
                     },
                     {
-                        "texto":"Selecciona los atributos que no fueron seleccionados clickeando en sus indices en la pestaña 'Preprocess'",
-                        "imagen":""
+                        "texto": "Selecciona los atributos que no fueron seleccionados clickeando en sus indices en la pestaña 'Preprocess'",
+                        "imagen": ""
                     },
                     {
-                        "texto":"Haz click en remove",
-                        "imagen":""
+                        "texto": "Haz click en remove",
+                        "imagen": ""
                     }
                 ],
-                "siguientePaso":"integracionDeDatos"
+                "siguientePaso": "integracionDeDatos"
             }
         },
-        "eliminacionDeValoresIncompatibles":{
-            "pregunta":"¿Sus atributos poseen datos de tipo caracter?",
-            "urlYregla":"eliminacionDeValoresIncompatibles",
-            "Si":{
+        "eliminacionDeValoresIncompatibles": {
+            "pregunta": "¿Sus atributos poseen datos de tipo caracter?",
+            "urlYregla": "eliminacionDeValoresIncompatibles",
+            "Si": {
                 "tipo": "recomendación",
-                "recomendaciones":[
+                "recomendaciones": [
                     {
-                        "texto":"Selecciona los atributos que son de tipo carácter",
-                        "imagen":""
+                        "texto": "Selecciona los atributos que son de tipo carácter",
+                        "imagen": ""
                     },
                     {
-                        "texto":"Haz click en Remove",
-                        "imagen":""
+                        "texto": "Haz click en Remove",
+                        "imagen": ""
                     }
                 ]
             },
-            "No":{
-                "tipo":"regla",
-                "regla":"reduccionDimensionalidad"
+            "No": {
+                "tipo": "regla",
+                "regla": "reduccionDimensionalidad"
             }
         }
     },
-    "apriori":{
-
+    "apriori": {
+        "reduccionDimensionalidad": {
+            "pregunta": "¿Conoce si todos los atributos de las tablas son relevantes para el proceso de agrupacion?",
+            "urlYregla": "reduccionDimensionalidad",
+            "Si": {
+                "tipo": "regla",
+                "regla": "detectarAnomaliasYExtremos"
+            },
+            "No": {
+                "tipo": "recomendación",
+                "recomendaciones": [
+                    {
+                        "texto": "Ve hacia la pestaña select attributes",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Clickear el boton Choose debo del titulo 'Attribute evaluator'",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Seleccionar 'WrapperSubsetEval'",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Abrir las opciones de 'WrapperSubsetEval'",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "En la opcion de classifier clickear el boton Choose",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Elegir dentro del directorio trees la opción J48",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Si desea seleccionar atributos que afecten a un atributo en concreto seleccione la clase",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Presiona start",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Selecciona los atributos que no fueron seleccionados clickeando en sus indices en la pestaña 'Preprocess'",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Haz click en remove",
+                        "imagen": ""
+                    }
+                ],
+                "siguientePaso": "detectarAnomaliasYExtremos"
+            }
+        },
+        "detectarAnomaliasYExtremos": {
+            "pregunta": "¿Estan todos sus valores anomalos eliminados junto a sus valores extremos?",
+            "urlYregla": "detectarAnomaliasYExtremos",
+            "Si": {
+                "tipo": "regla",
+                "regla": "discretizarValores"
+            },
+            "No": {
+                "tipo": "recomendación",
+                "recomendaciones": [
+                    {
+                        "texto": "Ir a la pestaña de pre process",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Clickear el boton de choose debajo de 'filter'",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Seleccionar dentro del directorio de unsupervised y dentro del directorio de attributes la opciones 'InterquartileRange'",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Abrir las opciones de 'InterquartileRange'",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "En la opcion 'attributeIndices' seleccionar el indice o el rango de los indices que se desean evaluar",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Poner en true el campo 'detectionPerAttribute'",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Aplicar el filtro en el boton 'apply'",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Se crearan 2 un nuevo atributos nonimales, uno para los valores extremos y otro para los valores anomalos",
+                        "imagen": ""
+                    }
+                ],
+                "siguientePaso": "eliminarValoresNomalosYValoresExtremos"
+            }
+        },
+        "eliminarValoresNomalosYValoresExtremos": {
+            "pregunta": "¿Deseas eliminar los valores anomalos o los valores extremos?",
+            "urlYregla": "eliminarValoresNomalosYValoresExtremos",
+            "No": {
+                "tipo": "regla",
+                "regla": "reemplazarValoresNomalosYValoresExtremos"
+            },
+            "Si": {
+                "tipo": "recomendación",
+                "recomendaciones": [
+                    {
+                        "texto": "Ir a la pestaña de pre process",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Clickear el boton de choose debajo de 'filter'",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Seleccionar dentro del directorio de unsupervised y dentro del directorio de instance la opcion 'RemoveWithValues'",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Ir las opciones del filtro",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "En 'attributeIndex' colocar el numero o el rango que deseas eliminar",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "En el campo 'nominalIndices' colocar el atributo nominal que se dese eliminar, en este caso el atributo 'yes'",
+                        "imagen": ""
+                    }
+                ],
+                "siguientePaso": "normalizarDatos"
+            }
+        },
+        "reemplazarValoresNomalosYValoresExtremos": {
+            "pregunta": "¿Deseas remplazar los valores anomalos o los valores extremos?",
+            "urlYregla": "reemplazarValoresNomalosYValoresExtremos",
+            "No": {
+                "tipo": "regla",
+                "regla": "eliminarValoresNomalosYValoresExtremos"
+            },
+            "Si": {
+                "tipo": "recomendación",
+                "recomendaciones": [
+                    {
+                        "texto": "Anota el indice en WEKA del atributo que se desea modificar",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Clickear el boton de choose debajo de 'filter'",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Despliega el directorio weka -> filters -> unsupervised -> attributes",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Clickea RenameNominalValues",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Despliega las opciones del filtro y en el campo de 'selectedAtributes' escribe el indice del atributo que deseas modificar",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "En el campo valueReplacement escribe '<valor que deseas remplazar>:<valor por el que será reemplazado>'",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Haz click en ok y luego en 'Apply'",
+                        "imagen": ""
+                    }
+                ],
+                "siguientePaso": "normalizarDatos"
+            }
+        },
+        "discretizarValores": {
+            "pregunta": "¿Posee valores numéricos?",
+            "urlYregla": "eliminacionDeValoresIncompatibles",
+            "Si": {
+                "tipo": "recomendación",
+                "recomendaciones": [
+                    {
+                        "texto": "Anota el indice en WEKA del atributo que se desea modificar",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Clickea 'choose' en la barra 'Filters'",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Selecciona weka -> filters -> unsupervised -> attributes -> discretize",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Despliega las opciones del filtro",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "En el campo 'attributesIndices' selecciona el indice del atributo que deseas transformar",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "En el campo 'bins' indica cuantos en cuantas clases deben separarse",
+                        "imagen": ""
+                    },
+                    {
+                        "texto": "Aplicar el filtro en el boton 'apply'",
+                        "imagen": ""
+                    }
+                ]
+            },
+            "No": {
+                "tipo": "regla",
+                "regla": "reduccionDimensionalidad"
+            }
+        }
     }
-
-
 }
