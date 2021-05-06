@@ -1,8 +1,84 @@
 {
     "kmedias":{
-        
+        "reduccionDimensionalidad":{
+            "pregunta":"¿Conoce si todos los atributos de las tablas son relevantes para el proceso de agrupacion?",
+            "urlYregla":"reduccionDimensionalidad",
+            "Si":{
+                "tipo": "regla",
+                "regla":"reduccionDimensionalidad"
+            },
+            "No":{
+                "tipo":"recomendación",
+                "recomendaciones":[
+                    {
+                        "texto":"Ve hacia la pestaña select attributes",
+                        "imagen":""
+                    },
+                    {
+                        "texto":"Clickear el boton Choose  debo del titulo 'Attribute evaluator'",
+                        "imagen":""
+                    },
+                    {
+                        "texto":"Seleccionar 'WrapperSubsetEval'",
+                        "imagen":""
+                    },
+                    {
+                        "texto":"Abrir las opciones de 'WrapperSubsetEval'",
+                        "imagen":""
+                    },
+                    {
+                        "texto":"En la opcion de classifier clickear  el boton Choose",
+                        "imagen":""
+                    },
+                    {
+                        "texto":"Elegir dentro del directorio trees la opción J48",
+                        "imagen":""
+                    },
+                    {
+                        "texto":"Si desea seleccionar atributos que afecten a un atributo en concreto seleccione la clase",
+                        "imagen":""
+                    },
+                    {
+                        "texto":"Presiona start",
+                        "imagen":""
+                    },
+                    {
+                        "texto":"Selecciona los atributos que no fueron seleccionados clickeando en sus indices en la pestaña 'Preprocess'",
+                        "imagen":""
+                    },
+                    {
+                        "texto":"Haz click en remove",
+                        "imagen":""
+                    }
+                ],
+                "siguientePaso":"integracionDeDatos"
+            }
+        },
+        "eliminacionDeValoresIncompatibles":{
+            "pregunta":"¿Sus atributos poseen datos de tipo caracter?",
+            "urlYregla":"eliminacionDeValoresIncompatibles",
+            "Si":{
+                "tipo": "recomendación",
+                "recomendaciones":[
+                    {
+                        "texto":"Selecciona los atributos que son de tipo carácter",
+                        "imagen":""
+                    },
+                    {
+                        "texto":"Haz click en Remove",
+                        "imagen":""
+                    }
+                ]
+            },
+            "No":{
+                "tipo":"regla",
+                "regla":"reduccionDimensionalidad"
+            }
+        }
     },
     "apriori":{
-        
+
     }
+
+
 }
