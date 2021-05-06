@@ -13,7 +13,8 @@
         "type":"recomendación",
         "params":{
             "recomendaciones": [
-                "Identificar el experto en el dominio de los datos"
+                "Identifica el problema y el area al que está relacionado",
+                "Describe el problema en terminos generales"
             ]        
         }
     }

@@ -24,17 +24,17 @@
                 "siguientePaso": "analisisAnteriores"
         },
         "analisisAnteriores": {
-                "pregunta": "¿Tiene una noción de los esfuerzos anteriores hechos analisis de datos?",
+                "pregunta": "¿Tiene una noción de los esfuerzos anteriores hechos sobre este problema utilizando un proceso de analisis de datos?",
                 "urlYRegla": "analisisAnteriores",
                 "siguientePaso": "publicoYExpectativas"
         },
         "publicoYExpectativas": {
-                "pregunta": "¿Tiene idenficadas las necesidades y expectativas así como el publico al que va dirigido este analisis de datos?",
+                "pregunta": "¿Tiene identificadas las necesidades y expectativas así como el publico al que va dirigido este analisis de datos?",
                 "urlYRegla": "publicoYExpectativas",
                 "siguientePaso": "solucionTemporal"
         },
         "solucionTemporal":{
-                "pregunta":"¿Tiene idenficada la solución que tiene el negocio por ahora y  que busca resolver a traves de la minería de datos?",
+                "pregunta":"¿Tiene identificada la solución que tiene el negocio por ahora y  que busca resolver a traves de la minería de datos?",
                 "urlYRegla": "solucionTemporal",
                 "siguientePaso": "solucionATravesDeMineria"
         },
