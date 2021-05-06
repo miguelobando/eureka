@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-     <p>Etapa 3</p>
+     <p>Etapa 4</p>
     </div>
     <div class="row">
       <div class="col s12">
@@ -13,12 +13,12 @@
     <div class="row">
       <button
         class="col offset-s1 s4 waves-effect waves-light btn indigo darken-1"
-        @click="enviarRespuesta3('Si')"
+        @click="enviarRespuesta4('Si')"
       >Si</button>
 
       <button
         class="col offset-s2 s4 waves-effect waves-light btn indigo darken-1"
-        @click="enviarRespuesta3('No')"
+        @click="enviarRespuesta4('No')"
       >No</button>
     </div>
     <div class="row" v-if="instrucciones">
@@ -39,7 +39,7 @@
     <div class="row" v-if="siguientePasoPostRecomendacion">
       <div class="col s8 offset-s2">
         <button
-          @click="siguientePregunta3()"
+          @click="siguientePregunta4()"
           class="waves-effect waves-light btn indigo darken-1"
         >Siguiente Paso</button>
       </div>
@@ -51,7 +51,7 @@
 
 <script>
 export default {
-  name: "etapa3",
+  name: "etapa4",
   props: {
     datos: Object
   },
@@ -65,9 +65,9 @@ export default {
     };
   },
   methods: {
-    enviarRespuesta3: function(arg) {
+    enviarRespuesta4: function(arg) {
       let respuesta = this.datos[arg];
-      this.mostrarBotonSiguientePaso3(arg);
+      this.mostrarBotonSiguientePaso4(arg);
 
       if(respuesta.tipo == "regla"){
         this.instrucciones = false;
@@ -80,13 +80,13 @@ export default {
         
       }
     },
-    mostrarBotonSiguientePaso3: function(arg){
+    mostrarBotonSiguientePaso4: function(arg){
         if(this.datos[arg].siguientePaso){
           this.siguientePasoPostRecomendacion = true;
           this.siguientePaso = this.datos[arg].siguientePaso; 
         }
     },   
-    siguientePregunta3: function() {
+    siguientePregunta4: function() {
       this.instrucciones = false;
       this.siguientePasoPostRecomendacion = false;
       this.$parent.siguientePasoEtapa2 = this.siguientePaso;
