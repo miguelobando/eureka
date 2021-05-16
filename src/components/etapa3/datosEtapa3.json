@@ -2,79 +2,246 @@
     "kmedias": {
         "reduccionDimensionalidad": {
             "pregunta": "¿Conoce si todos los atributos de las tablas son relevantes para el proceso de agrupacion?",
-            "urlYregla": "reduccionDimensionalidad",
             "Si": {
                 "tipo": "regla",
-                "regla": "reduccionDimensionalidad"
+                "regla": "detectarAnomaliasYExtremos"
             },
             "No": {
                 "tipo": "recomendación",
                 "recomendaciones": [
                     {
                         "texto": "Ve hacia la pestaña select attributes",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p1.png"
                     },
                     {
-                        "texto": "Clickear el boton Choose  debo del titulo 'Attribute evaluator'",
-                        "imagen": ""
+                        "texto": "Clickear el boton Choose  debajo del titulo 'Attribute evaluator'",
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p2.png"
                     },
                     {
                         "texto": "Seleccionar 'WrapperSubsetEval'",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p3.png"
                     },
                     {
                         "texto": "Abrir las opciones de 'WrapperSubsetEval'",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p4.png"
                     },
                     {
                         "texto": "En la opcion de classifier clickear  el boton Choose",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p5.png"
                     },
                     {
                         "texto": "Elegir dentro del directorio trees la opción J48",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p6.png"
                     },
                     {
                         "texto": "Si desea seleccionar atributos que afecten a un atributo en concreto seleccione la clase",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p7.png"
                     },
                     {
                         "texto": "Presiona start",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p8.png"
+                    },
+                    {
+                        "texto":"Anota los indices de los atributos que fueron seleccionados",
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p9.png"
                     },
                     {
                         "texto": "Selecciona los atributos que no fueron seleccionados clickeando en sus indices en la pestaña 'Preprocess'",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p10.png"
                     },
                     {
                         "texto": "Haz click en remove",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p11.png"
                     }
                 ],
-                "siguientePaso": "integracionDeDatos"
+                "siguientePaso": "detectarAnomaliasYExtremos"
             }
         },
-        "eliminacionDeValoresIncompatibles": {
-            "pregunta": "¿Sus atributos poseen datos de tipo caracter?",
-            "urlYregla": "eliminacionDeValoresIncompatibles",
+        "detectarAnomaliasYExtremos": {
+            "pregunta": "¿Estan todos sus valores anomalos y extremos detectados?",
+            "Si": {
+                "tipo": "regla",
+                "regla": "normalizarDatos"
+            },
+            "No": {
+                "tipo": "recomendación",
+                "recomendaciones": [
+                    {
+                        "texto": "Ir a la pestaña de pre process",
+                        "imagen": "/assets/etapa3/detectarAnomaliasYExtremos/p1.png"
+                    },
+                    {
+                        "texto": "Clickear el boton de choose debajo de 'filter'",
+                        "imagen": "/assets/etapa3/detectarAnomaliasYExtremos/p2.png"
+                    },
+                    {
+                        "texto": "Seleccionar dentro del directorio de unsupervised y dentro del directorio de attributes la opciones 'InterquartileRange'",
+                        "imagen": "/assets/etapa3/detectarAnomaliasYExtremos/p3.png"
+                    },
+                    {
+                        "texto": "Abrir las opciones de 'InterquartileRange'",
+                        "imagen": "/assets/etapa3/detectarAnomaliasYExtremos/p4.png"
+                    },
+                    {
+                        "texto": "En la opcion 'attributeIndices' seleccionar el indice o el rango de los indices que se desean evaluar",
+                        "imagen": "/assets/etapa3/detectarAnomaliasYExtremos/p5.png"
+                    },
+                    {
+                        "texto": "Poner en true el campo 'detectionPerAttribute'",
+                        "imagen": "/assets/etapa3/detectarAnomaliasYExtremos/p6.png"
+                    },
+                    {
+                        "texto": "Aplicar el filtro en el boton 'apply'",
+                        "imagen": "/assets/etapa3/detectarAnomaliasYExtremos/p7.png"
+                    },
+                    {
+                        "texto": "Se crearan 2 un nuevo atributos nonimales, uno para los valores extremos y otro para los valores anomalos",
+                        "imagen": "/assets/etapa3/detectarAnomaliasYExtremos/p8.png"
+                    }
+                ],
+                "siguientePaso": "eliminarValoresAnomalosYValoresExtremos"
+            }
+        },
+        "eliminarValoresAnomalosYValoresExtremos": {
+            "pregunta": "¿Deseas eliminar los valores anomalos o los valores extremos?",
+            "No": {
+                "tipo": "regla",
+                "regla": "reemplazarValoresAnomalosYExtremosEnteros"
+            },
             "Si": {
                 "tipo": "recomendación",
                 "recomendaciones": [
                     {
-                        "texto": "Selecciona los atributos que son de tipo carácter",
+                        "texto": "Ir a la pestaña de pre process",
+                        "imagen": "/assets/etapa3/eliminarValoresAnomalosYValoresExtremos/p1.png"
+                    },
+                    {
+                        "texto": "Clickear el boton de choose debajo de 'filter'",
+                        "imagen": "/assets/etapa3/eliminarValoresAnomalosYValoresExtremos/p2.png"
+                    },
+                    {
+                        "texto": "Seleccionar dentro del directorio de unsupervised y dentro del directorio de instance la opcion 'RemoveWithValues'",
+                        "imagen": "/assets/etapa3/eliminarValoresAnomalosYValoresExtremos/p3.png"
+                    },
+                    {
+                        "texto": "Ir las opciones del filtro",
+                        "imagen": "/assets/etapa3/eliminarValoresAnomalosYValoresExtremos/p4.png"
+                    },
+                    {
+                        "texto": "En 'attributeIndex' colocar el numero o el rango que deseas eliminar",
+                        "imagen": "/assets/etapa3/eliminarValoresAnomalosYValoresExtremos/p5.png"
+                    },
+                    {
+                        "texto": "En el campo 'nominalIndices' colocar el atributo nominal que se dese eliminar, en este caso el atributo 'yes'",
+                        "imagen": "/assets/etapa3/eliminarValoresAnomalosYValoresExtremos/p6.png"
+                    },
+                    {
+                        "texto": "Presiona Ok y luego el boton apply",
+                        "imagen":"/assets/etapa3/eliminarValoresAnomalosYValoresExtremos/p7.png"
+                    }
+                ],
+                "siguientePaso": "normalizarDatos"
+            }
+        },
+        "reemplazarValoresAnomalosYExtremosEnteros": {
+            "pregunta": "¿Deseas remplazar los valores anomalos nominales?",
+            "No": {
+                "tipo": "regla",
+                "regla": "eliminarValoresAnomalosYValoresExtremos"
+            },
+            "Si": {
+                "tipo": "recomendación",
+                "recomendaciones": [
+                    {
+                        "texto": "Anota el indice o los indices en WEKA de los atributos que deseas modificar",
                         "imagen": ""
                     },
                     {
-                        "texto": "Haz click en Remove",
-                        "imagen": ""
+                        "texto":"Calcula mediante excel o alguna herramienta similar el valor del primer cuartil (Q1), el tercer cuartil (Q3), y la resta entre Q2-Q1 (DQ) ",
+                        "imagen":""
+                    },
+                    {
+                        "texto":"Calcula el rango inferior anomalo mediante la siguiente ecuacion Q1-6*DQ",
+                        "imagen":""
+                    },
+                    {
+                        "texto":"Calcula el rango superior anomalo mediante la siguiente ecuacion Q1+6*DQ",
+                        "imagen":""
+                    },
+                    {
+                        "texto":"Ir a la pestaña de preprocess",
+                        "imagen": "/assets/etapa3/reemplazarValoresAnomalosYExtremosNumericos/p1.png"
+                    },
+                    {
+                        "texto": "Clickear el boton de choose debajo de 'filter'",
+                        "imagen": "/assets/etapa3/reemplazarValoresAnomalosYExtremosNumericos/p2.png"
+                    },
+                    {
+                        "texto": "Despliega el directorio weka -> filters -> unsupervised -> attributes",
+                        "imagen": "/assets/etapa3/reemplazarValoresAnomalosYExtremosNumericos/p3.png"
+                    },
+                    {
+                        "texto": "Clickea NumericCleaner",
+                        "imagen": "/assets/etapa3/reemplazarValoresAnomalosYExtremosNumericos/p4.png"
+                    },
+                    {
+                        "texto": "Despliega las opciones del filtro y en el campo de 'NumericClear' escribe el indice del atributo que deseas modificar en el campo attributeIndices",
+                        "imagen": "/assets/etapa3/reemplazarValoresAnomalosYExtremosNumericos/p5.png"
+                    },
+                    {
+                        "texto": "En el campo MaxThreshold ingresa el valor calculado como 'rango superior anomalo'",
+                        "imagen": "/assets/etapa3/reemplazarValoresAnomalosYExtremosNumericos/p6.png"
+                    },
+                    {
+                        "texto": "En el campo MinThreshold ingresa el valor calculado como 'rango inferior anomalo'",
+                        "imagen": "/assets/etapa3/reemplazarValoresAnomalosYExtremosNumericos/p7.png"
+
+                    },
+                    {
+                        "texto": "En el campo minDefault y MaxDefault ingresa el valor de la media dado por Weka como Mean",
+                        "imagen": "/assets/etapa3/reemplazarValoresAnomalosYExtremosNumericos/p8.png"
+                    },
+                    {
+                        "texto": "Haz click en ok y luego en 'Apply'",
+                        "imagen": "/assets/etapa3/reemplazarValoresAnomalosYExtremosNumericos/p9.png"
                     }
-                ]
-            },
-            "No": {
-                "tipo": "regla",
-                "regla": "reduccionDimensionalidad"
+                ],
+                "siguientePaso": "normalizarDatos"
             }
+        },
+        "normalizarDatos":{
+            "pregunta": "¿Sus valores estan presentados en escalas distintas? Ejemplo: Tiene valores de edad y salario en una misma tabla",
+            "No": {
+                "tipo": "finEtapa"
+            },
+            "Si":{
+                "tipo":"recomendación",
+                "recomendaciones":[
+                    {
+                        "imagen":"",
+                        "texto":"Anota el indice en WEKA del atributo que se desea modificar"
+                    },
+                    {
+                        "texto": "Ir a la pestaña de pre process",
+                        "imagen": "/assets/etapa3/normalizarDatos/p2.png"
+                    },
+                    {
+                        "imagen":"/assets/etapa3/normalizarDatos/p3.png",
+                        "texto":"Clickea 'choose' en la barra 'Filters'"
+                    },
+                    {
+                        "imagen":"/assets/etapa3/normalizarDatos/p4.png",
+                        "texto":"Despliega el directorio weka -> filters -> unsupervised -> attributes -> Normalize"
+                    },
+                    {
+                        "imagen":"/assets/etapa3/normalizarDatos/p6.png",
+                        "texto":"Haz click en 'Apply'"
+                    }
+                ],
+                "siguientePaso":"finEtapa"
+            }    
         }
+        
     },
     "apriori": {
         "reduccionDimensionalidad": {
@@ -89,100 +256,104 @@
                 "recomendaciones": [
                     {
                         "texto": "Ve hacia la pestaña select attributes",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p1.png"
                     },
                     {
-                        "texto": "Clickear el boton Choose debo del titulo 'Attribute evaluator'",
-                        "imagen": ""
+                        "texto": "Clickear el boton Choose  debajo del titulo 'Attribute evaluator'",
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p2.png"
                     },
                     {
                         "texto": "Seleccionar 'WrapperSubsetEval'",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p3.png"
                     },
                     {
                         "texto": "Abrir las opciones de 'WrapperSubsetEval'",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p4.png"
                     },
                     {
-                        "texto": "En la opcion de classifier clickear el boton Choose",
-                        "imagen": ""
+                        "texto": "En la opcion de classifier clickear  el boton Choose",
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p5.png"
                     },
                     {
                         "texto": "Elegir dentro del directorio trees la opción J48",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p6.png"
                     },
                     {
                         "texto": "Si desea seleccionar atributos que afecten a un atributo en concreto seleccione la clase",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p7.png"
                     },
                     {
                         "texto": "Presiona start",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p8.png"
+                    },
+                    {
+                        "texto":"Anota los indices de los atributos que fueron seleccionados",
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p9.png"
                     },
                     {
                         "texto": "Selecciona los atributos que no fueron seleccionados clickeando en sus indices en la pestaña 'Preprocess'",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p10.png"
                     },
                     {
                         "texto": "Haz click en remove",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/reduccionDimensionalidad/p11.png"
                     }
                 ],
                 "siguientePaso": "detectarAnomaliasYExtremos"
             }
         },
         "detectarAnomaliasYExtremos": {
-            "pregunta": "¿Estan todos sus valores anomalos eliminados junto a sus valores extremos?",
+            "pregunta": "¿Estan todos sus valores anomalos y valores extremos detectados?",
             "urlYregla": "detectarAnomaliasYExtremos",
             "Si": {
                 "tipo": "regla",
-                "regla": "discretizarValores"
+                "regla": "eliminarValoresAnomalosYValoresExtremosNumericos"
             },
             "No": {
                 "tipo": "recomendación",
                 "recomendaciones": [
                     {
                         "texto": "Ir a la pestaña de pre process",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/detectarAnomaliasYExtremos/p1.png"
                     },
                     {
                         "texto": "Clickear el boton de choose debajo de 'filter'",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/detectarAnomaliasYExtremos/p2.png"
                     },
                     {
                         "texto": "Seleccionar dentro del directorio de unsupervised y dentro del directorio de attributes la opciones 'InterquartileRange'",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/detectarAnomaliasYExtremos/p3.png"
                     },
                     {
                         "texto": "Abrir las opciones de 'InterquartileRange'",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/detectarAnomaliasYExtremos/p4.png"
                     },
                     {
                         "texto": "En la opcion 'attributeIndices' seleccionar el indice o el rango de los indices que se desean evaluar",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/detectarAnomaliasYExtremos/p5.png"
                     },
                     {
                         "texto": "Poner en true el campo 'detectionPerAttribute'",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/detectarAnomaliasYExtremos/p6.png"
                     },
                     {
                         "texto": "Aplicar el filtro en el boton 'apply'",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/detectarAnomaliasYExtremos/p7.png"
                     },
                     {
                         "texto": "Se crearan 2 un nuevo atributos nonimales, uno para los valores extremos y otro para los valores anomalos",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/detectarAnomaliasYExtremos/p8.png"
                     }
                 ],
-                "siguientePaso": "eliminarValoresNomalosYValoresExtremos"
+                "siguientePaso": "eliminarValoresAnomalosYValoresExtremosNumericos"
             }
         },
-        "eliminarValoresNomalosYValoresExtremos": {
-            "pregunta": "¿Deseas eliminar los valores anomalos o los valores extremos?",
-            "urlYregla": "eliminarValoresNomalosYValoresExtremos",
+        "eliminarValoresAnomalosYValoresExtremosNumericos": {
+            "pregunta": "¿Deseas eliminar los valores anomalos o los valores extremos numericos?",
+            "urlYregla": "eliminarValoresAnomalosYValoresExtremos",
             "No": {
                 "tipo": "regla",
-                "regla": "reemplazarValoresNomalosYValoresExtremos"
+                "regla": "reemplazarValoresAnomalosYValoresExtremos"
             },
             "Si": {
                 "tipo": "recomendación",
@@ -212,15 +383,14 @@
                         "imagen": ""
                     }
                 ],
-                "siguientePaso": "normalizarDatos"
+                "siguientePaso": "discretizarValores"
             }
         },
-        "reemplazarValoresNomalosYValoresExtremos": {
+        "reemplazarValoresAnomalosYValoresExtremos": {
             "pregunta": "¿Deseas remplazar los valores anomalos o los valores extremos?",
-            "urlYregla": "reemplazarValoresNomalosYValoresExtremos",
             "No": {
                 "tipo": "regla",
-                "regla": "eliminarValoresNomalosYValoresExtremos"
+                "regla": "eliminarValoresAnomalosYValoresExtremos"
             },
             "Si": {
                 "tipo": "recomendación",
@@ -254,12 +424,11 @@
                         "imagen": ""
                     }
                 ],
-                "siguientePaso": "normalizarDatos"
+                "siguientePaso": "discretizarValores"
             }
         },
         "discretizarValores": {
             "pregunta": "¿Posee valores numéricos?",
-            "urlYregla": "eliminacionDeValoresIncompatibles",
             "Si": {
                 "tipo": "recomendación",
                 "recomendaciones": [
@@ -294,8 +463,7 @@
                 ]
             },
             "No": {
-                "tipo": "regla",
-                "regla": "reduccionDimensionalidad"
+                "tipo": "reemplazarValoresAnomalosYValoresExtremos"   
             }
         }
     }

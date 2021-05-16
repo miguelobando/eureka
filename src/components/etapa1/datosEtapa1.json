@@ -103,13 +103,7 @@
                 "pregunta": "La tarea de analisis de datos datos involucra encontrar dependencias entre los datos? Por ejemplo: Encontrar que se compra de manera mas frecuente despues de comprar un paquete de pan",
                 "urlYRegla": "asociacionDatos/final",
                 "finEtapa": true,
-                "siguientePaso": "predicionDatos"
-        },
-        "predicionDatos": {
-                "pregunta": "La tarea de sus datos involucra encontrar dependencias entre los datos? Por ejemplo: Encontrar que se compra de manera mas frecuente despues de comprar un paquete de pan",
-                "urlYRegla": "asociacionDatos/final",
-                "finEtapa": true,
-                "siguientePaso": "predicionDatos"
+                "siguientePaso": "deteccionAnomaliasDatos"
         },
         "deteccionAnomaliasDatos": {
                 "pregunta": "La tarea de analisis de datos involucra encontrar dependencias entre los datos? Por ejemplo: Encontrar que se compra de manera mas frecuente despues de comprar un paquete de pan",

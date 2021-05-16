@@ -11,14 +11,16 @@
       <etapa3 v-bind:datos="datosEtapa3" />
     </div>
     <div v-if="etapa['etapa4']">
-      <etapa4 v-bind:datos="datosEtapa4" />
+      <etapa4 v-bind:datos="datosEtapa4" v-bind:metodoSeleccionado="metodoSeleccionado" />
     </div>
+    
    </div>
 </template>
 
 <script>
 import ImportacionDeEtapa1 from "./components/etapa1/datosEtapa1.json";
 import ImportacionDeEtapa2 from "./components/etapa2/datosEtapa2.json";
+import ImportacionDeEtapa3 from "./components/etapa3/datosEtapa3.json";
 import etapa1 from './components/etapa1/etapa1.vue';
 import etapa2 from './components/etapa2/etapa2.vue';
 import etapa3 from './components/etapa3/etapa3.vue';
@@ -26,6 +28,13 @@ import etapa4 from './components/etapa4/etapa4.vue';
 import 'materialize-css/dist/css/materialize.css';
 import 'materialize-css/dist/js/materialize.js';
 
+
+
+//TODO: Debo enlazar las rutas de la etapa 2 
+//TODO: Debo verificar si la ruta 2 tiene todas las imagenes 
+//TODO: Debo enlazar todos los componentes! 
+//TODO: Verificar la logica de cada uno de los componentes 
+//TODO: Verificar que todos los componentes funcionen bien y arrastren el conocimiento del anterior
 
 export default {
   name: 'App',
@@ -40,15 +49,17 @@ export default {
       foo: {},
       datosEtapa1: {},
       datosEtapa2 : {},
+      datosEtapa3 : {},
       datosDeEtapa: {},
       siguientePasoEtapa1: "",
       siguientePasoEtapa2: "",
-      
+      siguientePasoEtapa3: "",
+      metodoRecomendado: "kmedias",
       finEtapa: false,
       etapa:{
-        etapa1: true,
+        etapa1: false,
         etapa2: false,
-        etapa3: false
+        etapa3: true
       }
     }
    },
@@ -56,6 +67,7 @@ export default {
   created(){
     this.datosEtapa1 = ImportacionDeEtapa1['organizacion_negocio'];
     this.datosEtapa2 = ImportacionDeEtapa2['listaDeDatos'];   
+    this.datosEtapa3 = ImportacionDeEtapa3[this.metodoRecomendado]['reduccionDimensionalidad'];
   },
   watch:{
     siguientePasoEtapa1: function(val){
@@ -63,7 +75,10 @@ export default {
     },
     siguientePasoEtapa2: function(val){
       this.datosEtapa2 = ImportacionDeEtapa2[val];
-    } 
+    }, 
+    siguientePasoEtapa3: function (val){
+      this.datosEtapa3 = ImportacionDeEtapa3[this.metodoRecomendado][val];
+    }
   }
 
 }

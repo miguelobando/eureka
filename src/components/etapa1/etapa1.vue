@@ -65,6 +65,11 @@ export default {
                    }
                     else{  
                         if(response.data == "finEtapa"){
+                            if(this.datos.urlYRegla == 'asociacionDatos/final')
+                                this.$parent.metodoRecomendado ='apriori';
+                            else
+                                this.$parent.metodoRecomendado = 'kmedias';
+                            
                             this.$parent.etapa["etapa2"] = true;
                             this.$parent.etapa["etapa1"] = false;
                          

@@ -53,7 +53,8 @@
 export default {
   name: "etapa3",
   props: {
-    datos: Object
+    datos: Object,
+    metodoSeleccionado: String
   },
   data() {
     return {
@@ -67,21 +68,25 @@ export default {
   methods: {
     enviarRespuesta3: function(arg) {
       let respuesta = this.datos[arg];
-      this.mostrarBotonSiguientePaso3(arg);
+      console.log("respuesta",respuesta);
 
       if(respuesta.tipo == "regla"){
         this.instrucciones = false;
-        this.$parent.siguientePasoEtapa2 = respuesta.regla;
+        console.log("mando la regla",respuesta.regla);
+        this.$parent.siguientePasoEtapa3 = respuesta.regla;
       } 
+      
       if(respuesta.tipo == "recomendación"){
+        this.mostrarBotonSiguientePaso3(arg);
         this.respuesta = respuesta.recomendaciones;
         this.instrucciones = true;
-        
         
       }
     },
     mostrarBotonSiguientePaso3: function(arg){
         if(this.datos[arg].siguientePaso){
+          console.log("Este es el argummento ",arg);
+          console.log("Este es el siguiente paso ",this.datos[arg].siguientePaso);
           this.siguientePasoPostRecomendacion = true;
           this.siguientePaso = this.datos[arg].siguientePaso; 
         }
@@ -89,7 +94,7 @@ export default {
     siguientePregunta3: function() {
       this.instrucciones = false;
       this.siguientePasoPostRecomendacion = false;
-      this.$parent.siguientePasoEtapa2 = this.siguientePaso;
+      this.$parent.siguientePasoEtapa3 = this.siguientePaso;
     }
   },
   
