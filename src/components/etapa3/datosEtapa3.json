@@ -132,7 +132,7 @@
                         "imagen": "/assets/etapa3/eliminarValoresAnomalosYValoresExtremos/p5.png"
                     },
                     {
-                        "texto": "En el campo 'nominalIndices' colocar el atributo nominal que se dese eliminar, en este caso el atributo 'yes'",
+                        "texto": "En el campo 'nominalIndices' colocar el atributo nominal que se dese eliminar, en este caso el atributo 'yes', el cual es el valor con los objetos que poseen valores extremos o anomalos detectados por el filtro IntercuartileRange ",
                         "imagen": "/assets/etapa3/eliminarValoresAnomalosYValoresExtremos/p6.png"
                     },
                     {
@@ -353,41 +353,45 @@
             "urlYregla": "eliminarValoresAnomalosYValoresExtremos",
             "No": {
                 "tipo": "regla",
-                "regla": "reemplazarValoresAnomalosYValoresExtremos"
+                "regla": "reemplazarValoresAnomalosYValoresExtremosNumericos"
             },
             "Si": {
                 "tipo": "recomendación",
                 "recomendaciones": [
                     {
                         "texto": "Ir a la pestaña de pre process",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/eliminarValoresAnomalosYValoresExtremos/p1.png"
                     },
                     {
                         "texto": "Clickear el boton de choose debajo de 'filter'",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/eliminarValoresAnomalosYValoresExtremos/p2.png"
                     },
                     {
                         "texto": "Seleccionar dentro del directorio de unsupervised y dentro del directorio de instance la opcion 'RemoveWithValues'",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/eliminarValoresAnomalosYValoresExtremos/p3.png"
                     },
                     {
                         "texto": "Ir las opciones del filtro",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/eliminarValoresAnomalosYValoresExtremos/p4.png"
                     },
                     {
                         "texto": "En 'attributeIndex' colocar el numero o el rango que deseas eliminar",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/eliminarValoresAnomalosYValoresExtremos/p5.png"
                     },
                     {
-                        "texto": "En el campo 'nominalIndices' colocar el atributo nominal que se dese eliminar, en este caso el atributo 'yes'",
-                        "imagen": ""
+                        "texto": "En el campo 'nominalIndices' colocar el atributo nominal que se dese eliminar, en este caso el atributo 'yes', el cual es el valor con los objetos que poseen valores extremos o anomalos detectados por el filtro IntercuartileRange ",
+                        "imagen": "/assets/etapa3/eliminarValoresAnomalosYValoresExtremos/p6.png"
+                    },
+                    {
+                        "texto": "Presiona Ok y luego el boton apply",
+                        "imagen":"/assets/etapa3/eliminarValoresAnomalosYValoresExtremos/p7.png"
                     }
                 ],
                 "siguientePaso": "discretizarValores"
             }
         },
-        "reemplazarValoresAnomalosYValoresExtremos": {
-            "pregunta": "¿Deseas remplazar los valores anomalos o los valores extremos?",
+        "reemplazarValoresAnomalosYValoresExtremosNumericos": {
+            "pregunta": "¿Deseas remplazar los valores anomalos o los valores extremos numericos?",
             "No": {
                 "tipo": "regla",
                 "regla": "eliminarValoresAnomalosYValoresExtremos"
@@ -396,39 +400,64 @@
                 "tipo": "recomendación",
                 "recomendaciones": [
                     {
-                        "texto": "Anota el indice en WEKA del atributo que se desea modificar",
+                        "texto": "Anota el indice o los indices en WEKA de los atributos que deseas modificar",
                         "imagen": ""
+                    },
+                    {
+                        "texto":"Calcula mediante excel o alguna herramienta similar el valor del primer cuartil (Q1), el tercer cuartil (Q3), y la resta entre Q2-Q1 (DQ) ",
+                        "imagen":""
+                    },
+                    {
+                        "texto":"Calcula el rango inferior anomalo mediante la siguiente ecuacion Q1-6*DQ",
+                        "imagen":""
+                    },
+                    {
+                        "texto":"Calcula el rango superior anomalo mediante la siguiente ecuacion Q1+6*DQ",
+                        "imagen":""
+                    },
+                    {
+                        "texto":"Ir a la pestaña de preprocess",
+                        "imagen": "/assets/etapa3/reemplazarValoresAnomalosYExtremosNumericos/p1.png"
                     },
                     {
                         "texto": "Clickear el boton de choose debajo de 'filter'",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/reemplazarValoresAnomalosYExtremosNumericos/p2.png"
                     },
                     {
                         "texto": "Despliega el directorio weka -> filters -> unsupervised -> attributes",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/reemplazarValoresAnomalosYExtremosNumericos/p3.png"
                     },
                     {
-                        "texto": "Clickea RenameNominalValues",
-                        "imagen": ""
+                        "texto": "Clickea NumericCleaner",
+                        "imagen": "/assets/etapa3/reemplazarValoresAnomalosYExtremosNumericos/p4.png"
                     },
                     {
-                        "texto": "Despliega las opciones del filtro y en el campo de 'selectedAtributes' escribe el indice del atributo que deseas modificar",
-                        "imagen": ""
+                        "texto": "Despliega las opciones del filtro y en el campo de 'NumericClear' escribe el indice del atributo que deseas modificar en el campo attributeIndices",
+                        "imagen": "/assets/etapa3/reemplazarValoresAnomalosYExtremosNumericos/p5.png"
                     },
                     {
-                        "texto": "En el campo valueReplacement escribe '<valor que deseas remplazar>:<valor por el que será reemplazado>'",
-                        "imagen": ""
+                        "texto": "En el campo MaxThreshold ingresa el valor calculado como 'rango superior anomalo'",
+                        "imagen": "/assets/etapa3/reemplazarValoresAnomalosYExtremosNumericos/p6.png"
+                    },
+                    {
+                        "texto": "En el campo MinThreshold ingresa el valor calculado como 'rango inferior anomalo'",
+                        "imagen": "/assets/etapa3/reemplazarValoresAnomalosYExtremosNumericos/p7.png"
+
+                    },
+                    {
+                        "texto": "En el campo minDefault y MaxDefault ingresa el valor de la media dado por Weka como Mean",
+                        "imagen": "/assets/etapa3/reemplazarValoresAnomalosYExtremosNumericos/p8.png"
                     },
                     {
                         "texto": "Haz click en ok y luego en 'Apply'",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/reemplazarValoresAnomalosYExtremosNumericos/p9.png"
                     }
                 ],
                 "siguientePaso": "discretizarValores"
             }
         },
         "discretizarValores": {
-            "pregunta": "¿Posee valores numéricos?",
+            "pregunta": "Deseas transformar estos valores numericos a nominales? Esto permitira un mejor rendimiento en el algoritmo a aplicar",
             "Si": {
                 "tipo": "recomendación",
                 "recomendaciones": [
@@ -437,33 +466,37 @@
                         "imagen": ""
                     },
                     {
+                        "texto":"Ve hacia la pestaña Preprocess",
+                        "imagen":""
+                    },
+                    {
                         "texto": "Clickea 'choose' en la barra 'Filters'",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/discretizarValores/p2.png"
                     },
                     {
                         "texto": "Selecciona weka -> filters -> unsupervised -> attributes -> discretize",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/discretizarValores/p3.png"
                     },
                     {
                         "texto": "Despliega las opciones del filtro",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/discretizarValores/p4.png"
                     },
                     {
                         "texto": "En el campo 'attributesIndices' selecciona el indice del atributo que deseas transformar",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/discretizarValores/p5.png"
                     },
                     {
                         "texto": "En el campo 'bins' indica cuantos en cuantas clases deben separarse",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/discretizarValores/p6.png"
                     },
                     {
                         "texto": "Aplicar el filtro en el boton 'apply'",
-                        "imagen": ""
+                        "imagen": "/assets/etapa3/discretizarValores/p7.png"
                     }
                 ]
             },
             "No": {
-                "tipo": "reemplazarValoresAnomalosYValoresExtremos"   
+                "tipo": "reemplazarValoresAnomalosYValoresExtremosNominales"   
             }
         }
     }

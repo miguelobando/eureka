@@ -54,20 +54,21 @@ export default {
       siguientePasoEtapa1: "",
       siguientePasoEtapa2: "",
       siguientePasoEtapa3: "",
-      metodoRecomendado: "kmedias",
+      metodoRecomendado: "",
       finEtapa: false,
       etapa:{
-        etapa1: false,
+        etapa1: true,
         etapa2: false,
-        etapa3: true
+        etapa3: false,
+        etapa4: false
       }
     }
    },
 
   created(){
-    this.datosEtapa1 = ImportacionDeEtapa1['organizacion_negocio'];
-    this.datosEtapa2 = ImportacionDeEtapa2['listaDeDatos'];   
-    this.datosEtapa3 = ImportacionDeEtapa3[this.metodoRecomendado]['reduccionDimensionalidad'];
+    this.datosEtapa1 = ImportacionDeEtapa1['tareasDeAnalisis'];
+    this.datosEtapa2 = ImportacionDeEtapa2['aplicacionDeAlgoritmo'];   
+    this.datosEtapa3 = ImportacionDeEtapa3[this.metodoRecomendado]['detectarAnomaliasYExtremos'];
   },
   watch:{
     siguientePasoEtapa1: function(val){

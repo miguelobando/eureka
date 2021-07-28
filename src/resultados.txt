@@ -1,0 +1,60 @@
+ 1. adoption-of-the-budget-resolution=y physician-fee-freeze=n 219 ==> 
+ Class=democrat 219    <conf:(1)> lift:(1.63) lev:(0.19) [84] conv:(84.58)
+ 
+ 2. adoption-of-the-budget-resolution=y physician-fee-freeze=n aid-to-nicaraguan-contras=y 198 ==> 
+ Class=democrat 198    <conf:(1)> lift:(1.63) lev:(0.18) [76] conv:(76.47)
+ 
+ 3. physician-fee-freeze=n aid-to-nicaraguan-contras=y 211 ==> 
+ Class=democrat 210    <conf:(1)> lift:(1.62) lev:(0.19) [80] conv:(40.74)
+ 
+ 4. physician-fee-freeze=n education-spending=n 202 ==> 
+ Class=democrat 201    <conf:(1)> lift:(1.62) lev:(0.18) [77] conv:(39.01)
+ 
+ 5. physician-fee-freeze=n 247 ==> 
+ Class=democrat 245    <conf:(0.99)> lift:(1.62) lev:(0.21) [93] conv:(31.8)
+ 
+ 6. el-salvador-aid=n Class=democrat 200 ==> 
+ aid-to-nicaraguan-contras=y 197    <conf:(0.98)> lift:(1.77) lev:(0.2) [85] conv:(22.18)
+ 
+ 7. el-salvador-aid=n 208 ==> 
+ aid-to-nicaraguan-contras=y 204    <conf:(0.98)> lift:(1.76) lev:(0.2) [88] conv:(18.46)
+ 
+ 8. adoption-of-the-budget-resolution=y aid-to-nicaraguan-contras=y Class=democrat 203 ==> 
+ physician-fee-freeze=n 198    <conf:(0.98)> lift:(1.72) lev:(0.19) [82] conv:(14.62)
+ 9. el-salvador-aid=n aid-to-nicaraguan-contras=y 204 ==> 
+ 
+ Class=democrat 197    <conf:(0.97)> lift:(1.57) lev:(0.17) [71] conv:(9.85)
+
+ 10. aid-to-nicaraguan-contras=y Class=democrat 218 ==> 
+ physician-fee-freeze=n 210    <conf:(0.96)> lift:(1.7) lev:(0.2) [86] conv:(10.47)
+
+
+11. el-salvador-aid=n 208 ==> Class=democrat 200    <conf:(0.96)> lift:(1.57) lev:(0.17) [72] conv:(8.93)
+12. adoption-of-the-budget-resolution=y Class=democrat 231 ==> physician-fee-freeze=n 219    <conf:(0.95)> lift:(1.67) lev:(0.2) [87] conv:(7.68)
+13. el-salvador-aid=n 208 ==> aid-to-nicaraguan-contras=y Class=democrat 197    <conf:(0.95)> lift:(1.89) lev:(0.21) [92] conv:(8.65)
+14. adoption-of-the-budget-resolution=y aid-to-nicaraguan-contras=y 215 ==> Class=democrat 203    <conf:(0.94)> lift:(1.54) lev:(0.16) [71] conv:(6.39)
+15. education-spending=n Class=democrat 213 ==> physician-fee-freeze=n 201    <conf:(0.94)> lift:(1.66) lev:(0.18) [80] conv:(7.08)
+16. physician-fee-freeze=n aid-to-nicaraguan-contras=y Class=democrat 210 ==> adoption-of-the-budget-resolution=y 198    <conf:(0.94)> lift:(1.62) lev:(0.17) [75] conv:(6.76)
+
+
+
+ 1. adoption-of-the-budget-resolution=y physician-fee-freeze=n 219 ==> 
+    Class=democrat 219    <conf:(1)> lift:(1.63) lev:(0.19) [84] conv:(84.58)
+ 2. adoption-of-the-budget-resolution=y physician-fee-freeze=n anti-satellite-test-ban=y 182 ==> 
+    Class=democrat 182    <conf:(1)> lift:(1.63) lev:(0.16) [70] conv:(70.29)
+ 3. physician-fee-freeze=n mx-missile=y 180 ==> 
+    Class=democrat 179    <conf:(0.99)> lift:(1.62) lev:(0.16) [68] conv:(34.76)
+ 4. physician-fee-freeze=n 247 ==> 
+    Class=democrat 245    <conf:(0.99)> lift:(1.62) lev:(0.21) [93] conv:(31.8)
+ 5. physician-fee-freeze=n anti-satellite-test-ban=y 197 ==> 
+    Class=democrat 195    <conf:(0.99)> lift:(1.61) lev:(0.17) [74] conv:(25.36)
+ 6. adoption-of-the-budget-resolution=y anti-satellite-test-ban=y Class=democrat 184 ==> 
+    physician-fee-freeze=n 182    <conf:(0.99)> lift:(1.74) lev:(0.18) [77] conv:(26.51)
+ 7. anti-satellite-test-ban=y Class=democrat 200 ==> 
+    physician-fee-freeze=n 195    <conf:(0.97)> lift:(1.72) lev:(0.19) [81] conv:(14.41)
+ 8. mx-missile=y Class=democrat 188 ==> 
+    physician-fee-freeze=n 179    <conf:(0.95)> lift:(1.68) lev:(0.17) [72] conv:(8.13)
+ 9. adoption-of-the-budget-resolution=y Class=democrat 231 ==> 
+    physician-fee-freeze=n 219    <conf:(0.95)> lift:(1.67) lev:(0.2) [87] conv:(7.68)
+10. physician-fee-freeze=n anti-satellite-test-ban=y Class=democrat 195 ==> 
+    adoption-of-the-budget-resolution=y 182    <conf:(0.93)> lift:(1.6) lev:(0.16) [68] conv:(5.83)

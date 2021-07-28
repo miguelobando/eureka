@@ -64,10 +64,21 @@ export default {
       siguientePaso: ""
     };
   },
+  mounted(){
+  },
   methods: {
     enviarRespuesta2: function(arg) {
-      let respuesta = this.datos[arg];
-      this.mostrarBotonSiguientePaso(arg);
+       var respuesta = ""
+       if (this.datos.pregunta == "Aplicación de algoritmo de minería para previsualización de resultados sin preprocesamiento"){
+         if(arg == 'Si')
+            respuesta = this.datos['kmedias'];
+         else
+            respuesta = this.datos['apriori'];
+      }else{
+            respuesta = this.datos[arg];
+            this.mostrarBotonSiguientePaso(arg);
+
+      }
 
       if(respuesta.tipo == "regla"){
         this.instrucciones = false;

@@ -1,0 +1,30 @@
+Number of iterations: 11
+Within cluster sum of squared errors: 49.94879857600089 
+
+Clustered Instances
+
+0       20 (  9%)
+1       32 ( 15%)
+2       14 (  7%)
+3       23 ( 11%)
+4       56 ( 26%)
+5       57 ( 27%)
+6       12 (  6%)
+
+
+
+kMeans
+======
+
+Number of iterations: 8
+Within cluster sum of squared errors: 6.540178281070338
+Clustered Instances
+
+0       77 ( 47%)
+1        7 (  4%)
+2       10 (  6%)
+3       38 ( 23%)
+4       25 ( 15%)
+5        7 (  4%)
+
+

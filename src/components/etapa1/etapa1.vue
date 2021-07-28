@@ -59,7 +59,7 @@ export default {
             this.axios.post('http://localhost:3000/' + this.datos.urlYRegla +'?ans='+args)
                 .then((response) => {
                     console.log(response.data);
-                   this.respuesta = response.data.params;
+                       this.respuesta = response.data.params;
                    if(response.data.type == "recomendación"){
                         this.instrucciones=true;
                    }
