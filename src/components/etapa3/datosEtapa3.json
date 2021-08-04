@@ -212,7 +212,13 @@
         "normalizarDatos":{
             "pregunta": "¿Sus valores estan presentados en escalas distintas? Ejemplo: Tiene valores de edad y salario en una misma tabla",
             "No": {
-                "tipo": "finEtapa"
+                "tipo": "recomendación",
+                "recomendaciones":[
+                    {
+                        "imagen":"",
+                        "texto":"Haz completado la etapa de preprocesamiento de datos para una técnica de k medias"
+                    }],
+                "siguientePaso":"finDeEtapa" 
             },
             "Si":{
                 "tipo":"recomendación",
@@ -238,7 +244,7 @@
                         "texto":"Haz click en 'Apply'"
                     }
                 ],
-                "siguientePaso":"finEtapa"
+                "siguientePaso":"finDeEtapa"
             }    
         }
         

@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import ImportacionDeEtapa1 from "./components/etapa1/datosEtapa1.json";
+import ImportacionDeEtapa1 from "./components/etapa1/etapa1.json";
 import ImportacionDeEtapa2 from "./components/etapa2/datosEtapa2.json";
 import ImportacionDeEtapa3 from "./components/etapa3/datosEtapa3.json";
 import etapa1 from './components/etapa1/etapa1.vue';
@@ -54,20 +54,20 @@ export default {
       siguientePasoEtapa1: "",
       siguientePasoEtapa2: "",
       siguientePasoEtapa3: "",
-      metodoRecomendado: "",
+      metodoRecomendado: "kmedias",
       finEtapa: false,
       etapa:{
-        etapa1: true,
+        etapa1: false,
         etapa2: false,
-        etapa3: false,
+        etapa3: true,
         etapa4: false
       }
     }
    },
 
   created(){
-    this.datosEtapa1 = ImportacionDeEtapa1['tareasDeAnalisis'];
-    this.datosEtapa2 = ImportacionDeEtapa2['aplicacionDeAlgoritmo'];   
+    this.datosEtapa1 = ImportacionDeEtapa1['organizacion_negocio'];
+    this.datosEtapa2 = ImportacionDeEtapa2['listaDeDatos'];   
     this.datosEtapa3 = ImportacionDeEtapa3[this.metodoRecomendado]['detectarAnomaliasYExtremos'];
   },
   watch:{

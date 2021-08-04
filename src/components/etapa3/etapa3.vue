@@ -13,12 +13,12 @@
     <div class="row">
       <button
         class="col offset-s1 s4 waves-effect waves-light btn indigo darken-1"
-        @click="enviarRespuesta3('Si')"
+        @click="enviarRespuesta3('Si')" id="si"
       >Si</button>
 
       <button
         class="col offset-s2 s4 waves-effect waves-light btn indigo darken-1"
-        @click="enviarRespuesta3('No')"
+        @click="enviarRespuesta3('No')" id="no"
       >No</button>
     </div>
     <div class="row" v-if="instrucciones">
@@ -80,7 +80,8 @@ export default {
         this.mostrarBotonSiguientePaso3(arg);
         this.respuesta = respuesta.recomendaciones;
         this.instrucciones = true;
-        
+        document.getElementById("si").disabled = true;
+        document.getElementById("no").disabled = true;
       }
     },
     mostrarBotonSiguientePaso3: function(arg){
@@ -92,9 +93,16 @@ export default {
         }
     },   
     siguientePregunta3: function() {
+      document.getElementById("si").disabled = false;
+      document.getElementById("no").disabled = false;
       this.instrucciones = false;
       this.siguientePasoPostRecomendacion = false;
       this.$parent.siguientePasoEtapa3 = this.siguientePaso;
+
+      if(this.siguientePaso === "finDeEtapa"){
+        this.$parent.etapa['etapa4'] = true;
+        this.$parent.etapa['etapa3'] = false;
+      }
     }
   },
   

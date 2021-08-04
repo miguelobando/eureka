@@ -1,0 +1,373 @@
+{
+"organizacion_negocio": {
+    "pregunta": "¿Se tiene definido el organigrama del negocio junto a sus roles?",
+    "No":{
+        "tipo":"recomendación",
+        "recomendaciones":[
+            {
+                "texto": " Elaborar organigramas que identifiquen las divisiones, los departamentos y los grupos de proyectos. El organigrama también debe identificar los nombres de los gerentes y sus responsabilidades",
+                "imagen":""
+            }
+        ],
+        "siguientePaso": "personasClave"
+    },
+    "Si":{
+        "tipo":"regla",
+        "regla":"personasClave"
+    }
+
+},
+"personasClave":{
+    "pregunta": "¿Se tiene definido las personas claves dentro de la organización?",
+    "No":{
+        "tipo":"recomendación",
+        "recomendaciones":[
+            {
+                "texto": "Identificar las personas claves y sus roles",
+                "imagen":""
+            }
+        ],
+        "siguientePaso": "experto_de_datos"
+    },
+    "Si":{
+        "tipo":"regla",
+        "regla":"experto_de_datos"
+    }
+
+},
+"experto_de_datos":{
+    "pregunta": "¿Se tiene definido quien es el o los expertos de los datos a analizar?",
+    "No":{
+        "tipo":"recomendación",
+        "recomendaciones":[
+            {
+                "texto":"Identificar el experto en el dominio de los datos",
+                "imagen":""
+            }
+        ],
+        "siguientePaso": "problemaYAreaRelacionada"
+    },
+    "Si":{
+        "tipo":"regla",
+        "regla":"problemaYAreaRelacionada"
+    }
+
+},
+"problemaYAreaRelacionada":{
+    "pregunta": "¿Se tiene definido el problema en terminos generales así como las areas involucradas en el mismo?",
+    "No":{
+        "tipo":"recomendación",
+        "recomendaciones":[
+            {
+                "texto":"Identifica el problema y el area al que está relacionado",
+                "imagen":""
+            },
+            {
+                "texto": "Describe el problema en terminos generales",
+                "imagen":""
+            }
+        ],
+        "siguientePaso": "analisisAnteriores"
+    },
+    "Si":{
+        "tipo":"regla",
+        "regla":"analisisAnteriores"
+    }
+
+},
+"analisisAnteriores":{
+    "pregunta": "¿Tiene una noción de los esfuerzos anteriores hechos sobre este problema utilizando un proceso de analisis de datos?",
+    "No":{
+        "tipo":"recomendación",
+        "recomendaciones":[
+            {
+                "texto": "Verifica el estado actual del proyecto" ,
+                "imagen":""
+            },
+            {
+                "texto":"verifica si ya hay un area involucrada que está utizando tecnicas de minería de datos o si es necesario explicarle al area involucrada",
+                "imagen":""
+            }
+        ],
+        "siguientePaso": "publicoYExpectativas"
+    },
+    "Si":{
+        "tipo":"regla",
+        "regla":"publicoYExpectativas"
+    }
+
+},
+"publicoYExpectativas":{
+    "pregunta": "¿Tiene identificadas las necesidades y expectativas así como el publico al que va dirigido este analisis de datos?",
+    "No":{
+        "tipo":"recomendación",
+        "recomendaciones":[
+            {
+                "texto": "Identifica las necesidades de los usuarios y expectativas",
+                "imagen":""
+            },
+            {
+                "texto": "Identifica el público objetivo del proceso de analisis de datos",
+                "imagen":""
+            }
+        ],
+        "siguientePaso": "solucionTemporal"
+    },
+    "Si":{
+        "tipo":"regla",
+        "regla":"solucionTemporal"
+    }
+
+},
+"solucionTemporal":{
+    "pregunta":"¿Tiene identificada la solución que tiene el negocio por ahora y  que busca resolver a traves de la minería de datos?",
+    "No":{
+        "tipo":"recomendación",
+        "recomendaciones":[
+            {
+                "texto": "Identifica la solución que se utiliza por ahora del problema",
+                "imagen":""
+            },
+            {
+                "texto": "Describe las ventajas y desventajas de la solución actual y hasta que nivel es aceptada por los usuarios",
+                "imagen":""
+            }
+        ],
+        "siguientePaso": "solucionATravesDeMineria"
+    },
+    "Si":{
+        "tipo":"regla",
+        "regla":"solucionATravesDeMineria"
+    }
+
+},
+"solucionATravesDeMineria":{
+    "pregunta": "¿Tiene definido el problema que busca resolver mediante el analisis de datos?",
+    "No":{
+        "tipo":"recomendación",
+        "recomendaciones":[
+            {
+                "texto": "Describe informalmente el problema que debe ser resuelto a traves del analisis de datos",
+                "imagen":""
+            },
+            {
+                "texto":"Especifica todas las preguntas de negocio tan precisas com sea posible",
+                "imagen":""
+            }
+        ],
+        "siguientePaso": "beneficioDeNegocio"
+    },
+    "Si":{
+        "tipo":"regla",
+        "regla":"beneficioDeNegocio"
+    }
+
+},
+"beneficioDeNegocio":{
+    "pregunta": "¿Tiene definidos los beneficios (a nivel de negocio) esperados de este análisis de datos?",
+    "No":{
+        "tipo":"recomendación",
+        "recomendaciones":[
+            {
+                "texto": "Especifica en terminos de negocio los beneficios esperados",
+                "imagen":""
+            }
+        ],
+        "siguientePaso": "criteriosDeExito"
+    },
+    "Si":{
+        "tipo":"regla",
+        "regla":"criteriosDeExito"
+    }
+
+},
+"criteriosDeExito":{
+    "pregunta": "¿Tiene definidos los criterios de éxito del analisis de datos en términos del negocio y quien valida los mismos?",
+    "No":{
+        "tipo":"recomendación",
+        "recomendaciones":[
+            {
+                "texto": "Especifica los objetivos de éxito del proyecto de analilisis de datos en terminos del negocio",
+                "imagen":""
+            },
+            {
+                "texto": "Identifica quien valida ese criterio",
+                "imagen": ""
+            }
+        ],
+        "siguientePaso": "validacionDeCriteriosDeExito"
+    },
+    "Si":{
+        "tipo":"regla",
+        "regla":"validacionDeCriteriosDeExito"
+    }
+
+},
+"validacionDeCriteriosDeExito":{
+    "pregunta":"¿Sus fuentes de datos estan almacenados en motores de bases de datos?",
+    "No":{
+        "tipo":"recomendación",
+        "recomendaciones":[
+            {
+                "texto": "Identifica quien valida ese criterio",
+                "imagen":""
+            }
+        ],
+        "siguientePaso": "disponibilidadDehardware"
+    },
+    "Si":{
+        "tipo":"regla",
+        "regla":"disponibilidadDehardware"
+    }
+
+},
+"disponibilidadDehardware":{
+    "pregunta": "¿Tiene definida la disponibilidad del hardware para el proyecto de analisis de datos?",
+    "No":{
+        "tipo":"recomendación",
+        "recomendaciones":[
+            {
+                "texto": "Identifica la disponibilidad del hardware para el proyecto de analisis de datos",
+                "imagen":""
+            },
+            {
+                "texto":"Identifica si hace conflicto en hardware en producción con el hardware para el analisis de datos",
+                "imagen":""
+            }
+        ],
+        "siguientePaso": "fuentesDeDatos"
+    },
+    "Si":{
+        "tipo":"regla",
+        "regla":"fuentesDeDatos"
+    }
+
+},
+"fuentesDeDatos":{
+    "pregunta": "¿Tiene definidas las fuentes de datos con las que se va a trabajar?",
+    "No":{
+        "tipo":"recomendación",
+        "recomendaciones":[
+            {
+                "texto": "Identifica las fuentes de datos",
+                "imagen":""
+            },
+            {
+                "texto":"Identifica los tipos de fuentes de datos (expertos, bases de datos, documentación, entre otros)",
+                "imagen":""
+            }
+        ],
+        "siguientePaso": "conocimientoRelevanteSobreDatos"
+    },
+    "Si":{
+        "tipo":"regla",
+        "regla":"conocimientoRelevanteSobreDatos"
+    }
+
+},
+"conocimientoRelevanteSobreDatos":{
+    "pregunta": "¿Tiene claro el conocimiento relevante sobre estos datos?",
+    "No":{
+        "tipo":"recomendación",
+        "recomendaciones":[
+            {
+                "texto": "Describe el conocimiento relevante de fondo relacionado al problema descrito en los objetivos del negocio",
+                "imagen":""
+            }
+        ],
+        "siguientePaso": "supuestosDeOrganizacionYDatos"
+    },
+    "Si":{
+        "tipo":"regla",
+        "regla":"supuestosDeOrganizacionYDatos"
+    }
+
+},
+"supuestosDeOrganizacionYDatos":{
+    "pregunta": "¿Tiene listados los supuestos y asunciones que se tienen dentro de la organización, los supuestos externos, la calidad de los datos y como es necesario entender los resultados del proceso de analisis de datos y el publico al que va digirido?",
+    "No":{
+        "tipo":"recomendación",
+        "recomendaciones":[
+            {
+               "texto": "Liste los supuestos y asunciones que se tienen dentro de la organización, los supuestos externos, la calidad de los datos y como es necesario entender los resultados del proceso de analisis de datos y el publico al que va digirido",
+                "imagen":""
+            }
+        ],
+        "siguientePaso": "terminosRelevantes"
+    },
+    "Si":{
+        "tipo":"regla",
+        "regla":"terminosRelevantes"
+    }
+
+},
+"terminosRelevantes":{
+    "pregunta": "¿Tiene un glorario de términos  relevantes para el proyecto de analisis de datos y de la organización?",
+    "No":{
+        "tipo":"recomendación",
+        "recomendaciones":[
+            {
+                "texto": "Realice un glorario de términos  relevantes para el proyecto de analisis de datos y de la organización",
+                "imagen":""
+            }
+        ],
+        "siguientePaso": "tareasDeAnalisis"
+    },
+    "Si":{
+        "tipo":"regla",
+        "regla":"tareasDeAnalisis"
+    }
+
+},
+"tareasDeAnalisis":{
+    "pregunta": "¿Ha traducido los objetivos en tareas de analisis de datos? Ejemplo: Segmentar los clientes en diversos grupos",
+    "No":{
+        "tipo":"recomendación",
+        "recomendaciones":[
+            {
+                "texto": "Traduzca sus objetivos a tareas de análisis",
+                "imagen":""
+            }
+        ],
+        "siguientePaso": "clusteringDatos"
+    },
+    "Si":{
+        "tipo":"regla",
+        "regla":"clusteringDatos"
+    }
+
+},
+"clusteringDatos":{
+    "pregunta": "¿La tarea de analisis de datos involucra segmentación de los datos en subgrupos? Por ejemplo: Separar los clientes en grupos de acuerdo a sus compras",
+    "Si":{
+        "tipo":"recomendación",
+        "recomendaciones":[{
+            "texto" :"Su analisis de datos involucra tecnicas de clustering",
+            "imagen":""
+            }],
+        "siguientePaso":"finDeEtapa"
+
+    },
+    "No":{
+        "tipo":"regla",
+        "regla":"asociacionDatos"
+    }
+},
+"asociacionDatos":{
+    "pregunta": "La tarea de analisis de datos datos involucra encontrar dependencias entre los datos? Por ejemplo: Encontrar que se compra de manera mas frecuente despues de comprar un paquete de pan",
+    "Si":{
+        "tipo":"recomendación",
+        "recomendaciones":[{
+            "texto":"Su analisis de datos involucra tecnicas de reglas de asociación",
+            "imagen":""
+            }],
+        "siguientePaso":"finDeEtapa"
+        },
+    "No":{
+        "tipo":"regla",
+        "regla":"clusteringDatos"
+    }
+}
+
+
+}

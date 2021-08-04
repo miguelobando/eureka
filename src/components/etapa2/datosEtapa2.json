@@ -221,7 +221,7 @@
         "pregunta": "¿Conoce la taxonomia de los atributos cargados a la Weka?",
         "Si":{
             "tipo":"regla",
-            "regla": "aplicaciónDeAlgoritmo"
+            "regla": "aplicacionDeAlgoritmo"
         },
         "No":{
             "tipo":"recomendación",
