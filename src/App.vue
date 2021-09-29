@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
+    <div v-if="etapa['etapa0']">
+      <etapa0 v-bind:datos="datosEtapa0" />
+    </div>
     <div v-if="etapa['etapa1']">
        <etapa1 v-bind:datos="datosEtapa1"  />
     </div>
@@ -11,16 +14,20 @@
       <etapa3 v-bind:datos="datosEtapa3" />
     </div>
     <div v-if="etapa['etapa4']">
-      <etapa4 v-bind:datos="datosEtapa4" v-bind:metodoSeleccionado="metodoSeleccionado" />
+      <etapa4 v-bind:datos="datosEtapa4" v-bind:metodoRecomendado="metodoRecomendado" />
     </div>
     
    </div>
 </template>
 
 <script>
+import ImportacionDeEtapa0 from "./components/etapa0/etapa0.json";
 import ImportacionDeEtapa1 from "./components/etapa1/etapa1.json";
 import ImportacionDeEtapa2 from "./components/etapa2/datosEtapa2.json";
 import ImportacionDeEtapa3 from "./components/etapa3/datosEtapa3.json";
+import ImportacionDeEtapa4 from "./components/etapa4/datosEtapa4.json";
+
+import etapa0 from './components/etapa0/etapa0.vue';
 import etapa1 from './components/etapa1/etapa1.vue';
 import etapa2 from './components/etapa2/etapa2.vue';
 import etapa3 from './components/etapa3/etapa3.vue';
@@ -29,16 +36,10 @@ import 'materialize-css/dist/css/materialize.css';
 import 'materialize-css/dist/js/materialize.js';
 
 
-
-//TODO: Debo enlazar las rutas de la etapa 2 
-//TODO: Debo verificar si la ruta 2 tiene todas las imagenes 
-//TODO: Debo enlazar todos los componentes! 
-//TODO: Verificar la logica de cada uno de los componentes 
-//TODO: Verificar que todos los componentes funcionen bien y arrastren el conocimiento del anterior
-
 export default {
   name: 'App',
   components: {
+    etapa0,
     etapa1,
     etapa2,
     etapa3,
@@ -46,31 +47,39 @@ export default {
   },
   data(){
     return{
-      foo: {},
+      datosEtapa0: {},
       datosEtapa1: {},
       datosEtapa2 : {},
       datosEtapa3 : {},
+      datosEtapa4: {},
       datosDeEtapa: {},
+      siguientePasoEtapa0: "",
       siguientePasoEtapa1: "",
       siguientePasoEtapa2: "",
       siguientePasoEtapa3: "",
       metodoRecomendado: "kmedias",
       finEtapa: false,
       etapa:{
+        etapa0: true,
         etapa1: false,
         etapa2: false,
-        etapa3: true,
+        etapa3: false,
         etapa4: false
       }
     }
    },
 
   created(){
+    this.datosEtapa0 = ImportacionDeEtapa0['entenderAnalisis'];
     this.datosEtapa1 = ImportacionDeEtapa1['organizacion_negocio'];
     this.datosEtapa2 = ImportacionDeEtapa2['listaDeDatos'];   
     this.datosEtapa3 = ImportacionDeEtapa3[this.metodoRecomendado]['detectarAnomaliasYExtremos'];
+    this.datosEtapa4 = ImportacionDeEtapa4['aplicacionDeAlgoritmo'];
   },
   watch:{
+    siguientePasoEtapa0: function(val){
+      this.datosEtapa0 = ImportacionDeEtapa0[val]
+    },
     siguientePasoEtapa1: function(val){
       this.datosEtapa1 = ImportacionDeEtapa1[val];
     },

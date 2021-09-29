@@ -10,24 +10,12 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <button
-        class="col offset-s1 s4 waves-effect waves-light btn indigo darken-1"
-        @click="enviarRespuesta4('Si')"
-      >Si</button>
-
-      <button
-        class="col offset-s2 s4 waves-effect waves-light btn indigo darken-1"
-        @click="enviarRespuesta4('No')"
-      >No</button>
-    </div>
-    <div class="row" v-if="instrucciones">
       <div class="col s8 offset-s2">
         <div class="card">
-          <span class="card-title">En un documento realice lo siguiente:</span>
+          <span class="card-title">Realice lo siguiente:</span>
           <div
             class="card-content"
-            v-for="recomendaciones in respuesta"
+            v-for="recomendaciones in datos[metodoRecomendado].recomendaciones"
             :key="recomendaciones.index"
           >
             <p class="left-align">☼ {{recomendaciones.texto}}</p>
@@ -35,15 +23,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="row" v-if="siguientePasoPostRecomendacion">
-      <div class="col s8 offset-s2">
-        <button
-          @click="siguientePregunta4()"
-          class="waves-effect waves-light btn indigo darken-1"
-        >Siguiente Paso</button>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -53,11 +32,12 @@
 export default {
   name: "etapa4",
   props: {
-    datos: Object
+    datos: Object,
+    metodoRecomendado: String
   },
   data() {
     return {
-      instrucciones: false,
+      instrucciones: true,
       resultado: false,
       respuesta: Object,
       siguientePasoPostRecomendacion: false,
@@ -92,6 +72,10 @@ export default {
       this.$parent.siguientePasoEtapa2 = this.siguientePaso;
     }
   },
+  created(){
+    console.log("Estos son los datos", this.datos);
+    console.log("Este es el metodo seleccionado", this.metodoRecomendado);
+  }
   
 }
 

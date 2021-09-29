@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-     <p>Etapa 1</p>
+     <p>Introducción al asistente</p>
     </div>
     <div class="row">
       <div class="col s12">
@@ -13,18 +13,17 @@
     <div class="row">
       <button
         class="col offset-s1 s4 waves-effect waves-light btn indigo darken-1" id="si"
-        @click="enviarRespuesta('Si')"
+        @click="enviarRespuesta0('Si')"
       >Si</button>
 
       <button
         class="col offset-s2 s4 waves-effect waves-light btn indigo darken-1" id="no"
-        @click="enviarRespuesta('No')"
+        @click="enviarRespuesta0('No')"
       >No</button>
     </div>
     <div class="row" v-if="instrucciones">
       <div class="col s8 offset-s2">
         <div class="card">
-          <span class="card-title">En un documento realice lo siguiente:</span>
           <div
             class="card-content"
             v-for="recomendaciones in respuesta"
@@ -36,10 +35,10 @@
         </div>
       </div>
     </div>
-    <div class="row" v-if="siguientePasoPostRecomendacion">
+    <div class="row" v-if="siguientePasoPostRecomendacion0">
       <div class="col s8 offset-s2">
         <button
-          @click="siguientePregunta()"
+          @click="siguientePregunta0()"
           class="waves-effect waves-light btn indigo darken-1"
         >Siguiente Paso</button>
       </div>
@@ -51,7 +50,7 @@
 
 <script>
 export default {
-  name: "etapa1",
+  name: "etapa0",
   props: {
     datos: Object
   },
@@ -60,7 +59,7 @@ export default {
       instrucciones: false,
       resultado: false,
       respuesta: "",
-      siguientePasoPostRecomendacion: false,
+      siguientePasoPostRecomendacion0: false,
       siguientePaso: "",
       argumento: ""
     };
@@ -68,7 +67,7 @@ export default {
   mounted(){
   },
   methods: {
-  enviarRespuesta: function(arg) {
+  enviarRespuesta0: function(arg) {
       this.argumento = arg;
       let respuesta = this.datos[arg];
       console.log("respuesta",respuesta);
@@ -76,37 +75,37 @@ export default {
       if(respuesta.tipo == "regla"){
         this.instrucciones = false;
         console.log("mando la regla",respuesta.regla);
-        this.$parent.siguientePasoEtapa1 = respuesta.regla;
+        if(respuesta.regla =="finDeEtapa"){
+          this.$parent.etapa['etapa1'] = true;  
+          this.$parent.etapa['etapa0'] = false;          
+        }else
+          this.$parent.siguientePasoEtapa0 = respuesta.regla;
       } 
       
       if(respuesta.tipo == "recomendación"){
-        if(this.pregunta === "¿La tarea de analisis de datos involucra segmentación de los datos en subgrupos? Por ejemplo: Separar los clientes en grupos de acuerdo a sus compras")
-            this.$parent.metodoRecomendado = "kmedias";
-        
-        if(this.pregunta === "La tarea de analisis de datos datos involucra encontrar dependencias entre los datos? Por ejemplo: Encontrar que se compra de manera mas frecuente despues de comprar un paquete de pan")
-            this.$parent.metodoRecomendado = "apriori";
-       console.log("siguiente paso ",respuesta.siguientePaso); 
+        console.log("siguiente paso ",respuesta.siguientePaso); 
         this.siguientePaso = respuesta.siguientePaso;
         this.respuesta = respuesta.recomendaciones;
         this.instrucciones = true;
-        this.siguientePasoPostRecomendacion = true;
+        this.siguientePasoPostRecomendacion0 = true;
       }
+     
     },   
-    siguientePregunta: function() {
+    siguientePregunta0: function() {
       document.getElementById("si").disabled = false;
       document.getElementById("no").disabled = false;
       this.instrucciones = false;
-      this.siguientePasoPostRecomendacion = false;
+      this.siguientePasoPostRecomendacion0 = false;
       if(this.siguientePaso === "finDeEtapa"){
-        this.$parent.etapa['etapa2'] = true;
-        this.$parent.etapa['etapa1'] = false;
+        this.$parent.etapa['etapa1'] = true;
+        this.$parent.etapa['etapa0'] = false;
       }else{
-        this.$parent.siguientePasoEtapa1 =  this.datos[this.argumento].siguientePaso;
+        this.$parent.siguientePasoEtapa0 =  this.datos[this.argumento].siguientePaso;
       }
     }
   },
   watch:{
-    siguientePasoPostRecomendacion: function(val){
+    siguientePasoPostRecomendacion0: function(val){
       if(val == true){
         document.getElementById("si").disabled = true;
         document.getElementById("no").disabled = true;

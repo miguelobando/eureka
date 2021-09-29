@@ -1,0 +1,60 @@
+{"aplicacionDeAlgoritmo":{
+    "pregunta": "Aplicación de algoritmo de minería",
+    "apriori":{
+        "tipo":"recomendación",
+        "recomendaciones":[
+            {
+                "imagen":"",
+                "texto":"Ve la pestaña cluster"
+            },
+            {
+                "imagen":"",
+                "texto":"Selecciona el algoritmo simple k means en el boton choose"
+            },
+            {
+                "imagen":"",
+                "texto":"Abre las opciones del algoritmo"
+            },
+            {
+                "imagen":"",
+                "texto":"Seleccione un numero de agrupamientos que considere adecuado para este problema en la opcion 'numClusters'"
+            },
+            {
+                "imagen":"",
+                "texto":"Seleccione un numero de semillas dentro igual al numero de agrupamiento seleccionado"
+            },
+            {
+                "imagen":"",
+                "texto":"Itere la cantidad de veces que sea necesaria para reducir el error de la suma de cuadrados"
+            },
+            {
+                "imagen":"",
+                "texto":"Inicie el algoritmo, si desea hacerlo mediante la evaluacion de una clase seleccione una clase nominal en la barra de 'Classes to cluster evaluation' si desea hacerlo eliminando una parte de los datos seleccione 'percentage split' e ingrese como valor 70%"
+            }
+            
+        ],
+        "siguientePaso":"finEtapa"
+    },
+    "kmedias":{
+        "tipo":"recomendación",
+        "recomendaciones":[
+            {
+                "imagen":"/assets/etapa2/apriori/p1.png",
+                "texto":"Ve a la pestaña 'asociation'"
+            },
+            {
+                "imagen":"/assets/etapa2/apriori/p2.png",
+                "texto":"En el boton 'choose' selecciona 'Apriori'"
+            },
+            {
+                "imagen":"/assets/etapa2/apriori/p4.png",
+                "texto":"Verifica si boton start puede presionarse"
+            },
+            {
+                "imagen":"",
+                "texto":"De poder presionarse, registra en un documento cuantas reglas generó y la confianza (atributo conf) que cada una genera"
+            }                  
+        ],
+        "siguientePaso":"finEtapa"
+    }
+}}

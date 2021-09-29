@@ -1,0 +1,77 @@
+{
+    "entenderAnalisis": {
+        "pregunta": "¿Entiendo lo que es un proceso de análisis de datos?",
+        "No": {
+            "tipo": "recomendación",
+            "recomendaciones": [
+                {
+                    "texto": "El análisis de datos se define como la descomposición, observación y estudio de un conjunto de datos con el objetivo de responder preguntas acerca de los mismos",
+                    "imagen": ""
+                }
+            ],
+            "siguientePaso": "entenderDescubrimientoDeConocimiento"
+        },
+        "Si": {
+            "tipo": "regla",
+            "regla": "entenderDescubrimientoDeConocimiento"
+        }
+    },
+    "entenderDescubrimientoDeConocimiento": {
+        "pregunta": "¿Sabe lo que es el proceso de descubrimiento de conocimiento o KDD?",
+        "No": {
+            "tipo": "recomendación",
+            "recomendaciones": [
+                {
+                    "texto": "El descubrimiento de conocimiento (también llamado KDD Knowledge Discovery in Databases, por sus siglas en inglés) es un proceso que tiene las siguientes etapas: 1) entender el dominio de aplicación y conocimiento relevante, 2) integración y recolección y datos 3)  pre procesar (limpiar y transformar) los datos seleccionados e incorporar el conocimiento previo que se tiene del problema, 4) pasar los datos previamente transformados a través de algoritmos de minería de datos y análisis de datos, 5) mostrar e interpretar los resultados obtenidos",
+                    "imagen": ""
+                }
+            ],
+            "siguientePaso": "entenderFuncionamientoDeAsistente"
+        },
+        "Si": {
+            "tipo": "regla",
+            "regla": "entenderFuncionamientoDeAsistente"
+        }
+    },
+    "entenderFuncionamientoDeAsistente": {
+        "pregunta": "¿Entiende como funciona el asistente inteligente?",
+        "No": {
+            "tipo": "recomendación",
+            "recomendaciones": [
+                {
+                    "texto": "El asistente inteligente comprende el conocimiente hasta la 4ta etapa del proceso de descubrimiento de conocimiento",
+                    "imagen": ""
+                },
+                {
+                    "texto": "La función de este asistente es guiar al usuario a traves del proceso de descubrimiento de conocimiento",
+                    "imagen": ""
+                },
+                {
+                    "texto": "Sin embargo, el conocimiento suministrado solo permite resolver 2 tipos de problemas, problemas que requieran descubrimiento de dependencias entre los datosy problemas de segmentación de los datos en subgrupos.",
+                    "imagen": ""
+                },
+                {
+                    "texto": "Durante la primera fase el asistente realiza preguntas centradas en el contexto de los datos, su origen, el responsable de los mismos, así como la estructura de la organización donde estos se generan y un conocimiento general acerca de cómo se comportan y están estructurados los datos",
+                    "imagen": ""
+                },
+                {
+                    "texto": "Durante la segunda fase el asistente realiza preguntas necesarias para que el usuario empiece el proceso de análisis de datos, estas se centran en la verificación de la calidad de los datos, la evaluación de los mismos sobre sus inconsistencias, el formato que estos poseen, el descarte de datos irrelevantes para el objetivo ya planteado en la primera etapa, así como la integración de los mismos a la herramienta de análisis seleccionada para este trabajo de grado (WEKA) y la aplicación de una técnica hacia los datos sin pre procesamiento para darle al usuario una pre visualización del estado y comportamiento de sus datos",
+                    "imagen": ""
+                },
+                {
+                    "texto": "Durante la terce fase el asistente realiza preguntas relacionadas a los filtros y técnicas incluidas en el asistente para que el usuario novato pueda aplicarlas a sus datos, con el objetivo de mejorar la calidad de lo mismos",
+                    "imagen": ""
+                },
+                {
+                    "texto": "Durante la cuarta fase el asistente indica como aplicar la técnica determinada por la fase 1",
+                    "imagen": ""
+                }
+            ],
+            "siguientePaso": "finDeEtapa"
+        },
+        "Si": {
+            "tipo": "regla",
+            "regla": "finDeEtapa"
+        }
+    }
+}
